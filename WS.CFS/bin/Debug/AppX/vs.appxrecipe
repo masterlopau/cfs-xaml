@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>G75VX</Machine>
+    <WindowsUser>Drew</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>86e46273-dbab-4712-bc07-3e23be8ce03e</PackageIdentityName>
+    <RegisteredManifestChecksum>64B990FE3A7CA0FDE1988655E9E1F062ED37B3B8F859E6036B9251AE4BB5068B</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>86e46273-dbab-4712-bc07-3e23be8ce03e_1.0.0.0_neutral__c8j3q6jfcdty6</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>86e46273-dbab-4712-bc07-3e23be8ce03e_c8j3q6jfcdty6!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>86e46273-dbab-4712-bc07-3e23be8ce03e</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Drew</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-02-23T16:09:23.314</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\bin\Debug\WS.CFS.exe">
+      <PackagePath>WS.CFS.exe</PackagePath>
+      <Modified>2014-02-23T16:10:40.086</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-22T22:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-22T22:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-22T22:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-22T22:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\Common\ReadMe.txt">
+      <PackagePath>Common\ReadMe.txt</PackagePath>
+      <Modified>2014-02-23T14:24:47.254</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2014-02-23T14:26:52.883</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2014-02-23T16:10:39.914</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-02-23T16:09:23.265</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
