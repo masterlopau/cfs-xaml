@@ -21,7 +21,7 @@ namespace WS.CFS
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class AddFeedbackPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -45,7 +45,7 @@ namespace WS.CFS
         }
 
 
-        public MainPage()
+        public AddFeedbackPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -103,9 +103,5 @@ namespace WS.CFS
 
         #endregion
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddFeedbackPage));
-        }
     }
 }

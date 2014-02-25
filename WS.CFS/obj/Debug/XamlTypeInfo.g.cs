@@ -124,8 +124,8 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[8];
-            _typeNameTable[0] = "WS.CFS.MainPage";
+            _typeNameTable = new string[9];
+            _typeNameTable[0] = "WS.CFS.AddFeedbackPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "WS.CFS.Common.ObservableDictionary";
@@ -133,9 +133,10 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
             _typeNameTable[5] = "String";
             _typeNameTable[6] = "WS.CFS.Common.NavigationHelper";
             _typeNameTable[7] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[8] = "WS.CFS.MainPage";
 
-            _typeTable = new global::System.Type[8];
-            _typeTable[0] = typeof(global::WS.CFS.MainPage);
+            _typeTable = new global::System.Type[9];
+            _typeTable[0] = typeof(global::WS.CFS.AddFeedbackPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::WS.CFS.Common.ObservableDictionary);
@@ -143,6 +144,7 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
             _typeTable[5] = typeof(global::System.String);
             _typeTable[6] = typeof(global::WS.CFS.Common.NavigationHelper);
             _typeTable[7] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[8] = typeof(global::WS.CFS.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -177,8 +179,9 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::WS.CFS.MainPage(); }
+        private object Activate_0_AddFeedbackPage() { return new global::WS.CFS.AddFeedbackPage(); }
         private object Activate_3_ObservableDictionary() { return new global::WS.CFS.Common.ObservableDictionary(); }
+        private object Activate_8_MainPage() { return new global::WS.CFS.MainPage(); }
         private void MapAdd_3_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -197,9 +200,9 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  WS.CFS.MainPage
+            case 0:   //  WS.CFS.AddFeedbackPage
                 userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+                userType.Activator = Activate_0_AddFeedbackPage;
                 userType.AddMemberName("DefaultViewModel");
                 userType.AddMemberName("NavigationHelper");
                 xamlType = userType;
@@ -237,17 +240,35 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
             case 7:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
+
+            case 8:   //  WS.CFS.MainPage
+                userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_8_MainPage;
+                userType.AddMemberName("DefaultViewModel");
+                userType.AddMemberName("NavigationHelper");
+                xamlType = userType;
+                break;
             }
             return xamlType;
         }
 
 
-        private object get_0_MainPage_DefaultViewModel(object instance)
+        private object get_0_AddFeedbackPage_DefaultViewModel(object instance)
+        {
+            var that = (global::WS.CFS.AddFeedbackPage)instance;
+            return that.DefaultViewModel;
+        }
+        private object get_1_AddFeedbackPage_NavigationHelper(object instance)
+        {
+            var that = (global::WS.CFS.AddFeedbackPage)instance;
+            return that.NavigationHelper;
+        }
+        private object get_2_MainPage_DefaultViewModel(object instance)
         {
             var that = (global::WS.CFS.MainPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_1_MainPage_NavigationHelper(object instance)
+        private object get_3_MainPage_NavigationHelper(object instance)
         {
             var that = (global::WS.CFS.MainPage)instance;
             return that.NavigationHelper;
@@ -260,16 +281,28 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "WS.CFS.AddFeedbackPage.DefaultViewModel":
+                userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.AddFeedbackPage");
+                xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "WS.CFS.Common.ObservableDictionary");
+                xamlMember.Getter = get_0_AddFeedbackPage_DefaultViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "WS.CFS.AddFeedbackPage.NavigationHelper":
+                userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.AddFeedbackPage");
+                xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "NavigationHelper", "WS.CFS.Common.NavigationHelper");
+                xamlMember.Getter = get_1_AddFeedbackPage_NavigationHelper;
+                xamlMember.SetIsReadOnly();
+                break;
             case "WS.CFS.MainPage.DefaultViewModel":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.MainPage");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "WS.CFS.Common.ObservableDictionary");
-                xamlMember.Getter = get_0_MainPage_DefaultViewModel;
+                xamlMember.Getter = get_2_MainPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WS.CFS.MainPage.NavigationHelper":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.MainPage");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "NavigationHelper", "WS.CFS.Common.NavigationHelper");
-                xamlMember.Getter = get_1_MainPage_NavigationHelper;
+                xamlMember.Getter = get_3_MainPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             }

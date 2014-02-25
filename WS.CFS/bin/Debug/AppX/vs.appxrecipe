@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>G75VX</Machine>
-    <WindowsUser>Drew</WindowsUser>
+    <Machine>PALAGANJ1</Machine>
+    <WindowsUser>palaganj</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>86e46273-dbab-4712-bc07-3e23be8ce03e</PackageIdentityName>
@@ -14,52 +14,56 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-02-23T16:09:23.314</Modified>
+      <Modified>2014-02-25T12:30:32.993</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\bin\Debug\WS.CFS.exe">
+    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\WS.CFS.exe">
       <PackagePath>WS.CFS.exe</PackagePath>
-      <Modified>2014-02-23T16:10:40.086</Modified>
+      <Modified>2014-02-25T13:05:14.045</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-22T22:01:02.000</Modified>
+      <Modified>2014-02-25T11:28:21.997</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-22T22:01:02.000</Modified>
+      <Modified>2014-02-25T11:28:21.997</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-22T22:01:02.000</Modified>
+      <Modified>2014-02-25T11:28:21.999</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-22T22:01:02.000</Modified>
+      <Modified>2014-02-25T11:28:22.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\Common\ReadMe.txt">
+    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>
-      <Modified>2014-02-23T14:24:47.254</Modified>
+      <Modified>2014-02-25T11:28:22.014</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-02-23T14:26:52.883</Modified>
+      <Modified>2014-02-25T11:28:22.125</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\AddFeedbackPage.xbf">
+      <PackagePath>AddFeedbackPage.xbf</PackagePath>
+      <Modified>2014-02-25T13:05:13.836</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2014-02-23T16:10:39.914</Modified>
+      <Modified>2014-02-25T13:05:13.838</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Drew\Documents\Projects\WS.CFS\WS.CFS\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-02-23T16:09:23.265</Modified>
+      <Modified>2014-02-25T12:30:32.825</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
