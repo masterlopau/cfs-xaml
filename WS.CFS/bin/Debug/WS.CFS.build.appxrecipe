@@ -1,51 +1,273 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>PALAGANJ1</Machine>
-    <WindowsUser>palaganj</WindowsUser>
+    <Machine>PAULO-SURFACE</Machine>
+    <WindowsUser>Paulo</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>86e46273-dbab-4712-bc07-3e23be8ce03e</PackageIdentityName>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\WS.CFS.exe">
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\WS.CFS.exe">
       <PackagePath>WS.CFS.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\References\CommonConfiguration\neutral\DevExpress.Core.v13.2.dll">
+      <PackagePath>DevExpress.Core.v13.2.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\References\CommonConfiguration\neutral\DevExpress.Drawing.v13.2.dll">
+      <PackagePath>DevExpress.Drawing.v13.2.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\References\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2.dll">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\References\CommonConfiguration\neutral\DevExpress.UI.Xaml.Editors.v13.2.dll">
+      <PackagePath>DevExpress.UI.Xaml.Editors.v13.2.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Data\13.2\References\CommonConfiguration\neutral\DevExpress.UI.Xaml.Grid.v13.2.dll">
+      <PackagePath>DevExpress.UI.Xaml.Grid.v13.2.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\References\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2.dll">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\References\CommonConfiguration\neutral\DevExpress.UI.Xaml.v13.2.dll">
+      <PackagePath>DevExpress.UI.Xaml.v13.2.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Editors.v13.2\Themes\ButtonEdit.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Editors.v13.2\Themes\ButtonEdit.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\CodeViewControl.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\CodeViewControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Editors.v13.2\Themes\DateEdit.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Editors.v13.2\Themes\DateEdit.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Editors.v13.2\Themes\DateTimePicker.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Editors.v13.2\Themes\DateTimePicker.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.Core.v13.2\Themes\Default.xbf">
+      <PackagePath>DevExpress.Core.v13.2\Themes\Default.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Data\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Grid.v13.2\Themes\DefaultGridViewStyles.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Grid.v13.2\Themes\DefaultGridViewStyles.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.Core.v13.2\Themes\DialogService.xbf">
+      <PackagePath>DevExpress.Core.v13.2\Themes\DialogService.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.Core.v13.2\Themes\DX.xbf">
+      <PackagePath>DevExpress.Core.v13.2\Themes\DX.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.Core.v13.2\Themes\DX2.xbf">
+      <PackagePath>DevExpress.Core.v13.2\Themes\DX2.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.Core.v13.2\Themes\DXThemePatch.xbf">
+      <PackagePath>DevExpress.Core.v13.2\Themes\DXThemePatch.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\LayoutContainers\ExpandContainer.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\LayoutContainers\ExpandContainer.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Data\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Grid.v13.2\Themes\FilterPanel.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Grid.v13.2\Themes\FilterPanel.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.v13.2\Themes\Flyout.xbf">
+      <PackagePath>DevExpress.UI.Xaml.v13.2\Themes\Flyout.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\Generic.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Editors.v13.2\Themes\Generic.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Editors.v13.2\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\generic.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.Core.v13.2\Themes\generic.xbf">
+      <PackagePath>DevExpress.Core.v13.2\Themes\generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.v13.2\Themes\Generic.xbf">
+      <PackagePath>DevExpress.UI.Xaml.v13.2\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Data\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Grid.v13.2\Themes\generic.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Grid.v13.2\Themes\generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\LayoutContainers\GroupContainer.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\LayoutContainers\GroupContainer.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Data\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Grid.v13.2\Themes\GroupRow.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Grid.v13.2\Themes\GroupRow.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Data\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Grid.v13.2\Themes\Headers.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Grid.v13.2\Themes\Headers.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\NavigationElements\HubTile.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\NavigationElements\HubTile.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\SettingsBar\ImageButton.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\SettingsBar\ImageButton.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\SettingsBar\ImageRadioButton.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\SettingsBar\ImageRadioButton.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\Controls\LayoutControl\LayoutControl.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\Controls\LayoutControl\LayoutControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\Controls\LayoutControl\LayoutGroup.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\Controls\LayoutControl\LayoutGroup.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\Controls\LayoutControl\LayoutItem.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\Controls\LayoutControl\LayoutItem.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\NavigationElements\Navigation.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\NavigationElements\Navigation.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\PageView.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\PageView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\LayoutContainers\PanoramaContainer.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\LayoutContainers\PanoramaContainer.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfContinuousView.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfContinuousView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfViewerControl.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfViewerControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfViewerFlipView.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfViewerFlipView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfViewerGeneric.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfViewerGeneric.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfViewerOverlayControl.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfViewerOverlayControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfViewerSemanticZoomView.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\PdfViewer\PdfViewerSemanticZoomView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\LayoutContainers\PivotContainer.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\LayoutContainers\PivotContainer.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.v13.2\Themes\Popup.xbf">
+      <PackagePath>DevExpress.UI.Xaml.v13.2\Themes\Popup.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Editors.v13.2\Themes\PopupContainerEdit.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Editors.v13.2\Themes\PopupContainerEdit.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\RadialContextMenu.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\RadialContextMenu.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\RangeControl.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\RangeControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Data\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Grid.v13.2\Themes\Rows.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Grid.v13.2\Themes\Rows.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.Core.v13.2\Themes\ScrollBar.xbf">
+      <PackagePath>DevExpress.Core.v13.2\Themes\ScrollBar.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\SemanticZoom.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\SemanticZoom.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\SettingsBar\SettingsBarView.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\SettingsBar\SettingsBarView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\Buttons\ShapeButton.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\Buttons\ShapeButton.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\Buttons\ShapeButtonThreeState.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\Buttons\ShapeButtonThreeState.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.Core.v13.2\Themes\SharedColorsResourceDictionary.xbf">
+      <PackagePath>DevExpress.Core.v13.2\Themes\SharedColorsResourceDictionary.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\NavigationElements\SlideHubTile.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\NavigationElements\SlideHubTile.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\SlideView.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\SlideView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Editors.v13.2\Themes\SpinEdit.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Editors.v13.2\Themes\SpinEdit.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\StackedBarControl.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\StackedBarControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Data\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Grid.v13.2\Themes\StandardStyles.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Grid.v13.2\Themes\StandardStyles.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\Redist\CommonConfiguration\neutral\DevExpress.Core.v13.2\Core\Diagnostics\Styles.xbf">
+      <PackagePath>DevExpress.Core.v13.2\Core\Diagnostics\Styles.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\NavigationElements\SwingHubTile.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\NavigationElements\SwingHubTile.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\LayoutContainers\TabbedContainer.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\LayoutContainers\TabbedContainer.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\TabbedView.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\TabbedView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Editors.v13.2\Themes\TextEdit.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Editors.v13.2\Themes\TextEdit.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Layout.v13.2\Themes\NavigationElements\Tiles.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Layout.v13.2\Themes\NavigationElements\Tiles.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Controls.v13.2\Themes\TransitionControl.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Controls.v13.2\Themes\TransitionControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Controls\13.2\Redist\CommonConfiguration\neutral\DevExpress.UI.Xaml.Editors.v13.2\Themes\VirtualizedItemsControl.xbf">
+      <PackagePath>DevExpress.UI.Xaml.Editors.v13.2\Themes\VirtualizedItemsControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\DataModel\feedbacks.json">
+      <PackagePath>DataModel\feedbacks.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\Common\ReadMe.txt">
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\AddFeedbackPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\AddFeedbackPage.xbf">
       <PackagePath>AddFeedbackPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\FeedbackListPage.xbf">
+      <PackagePath>FeedbackListPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\LoginPage.xbf">
+      <PackagePath>LoginPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\PreferencesSettingsFlyout.xbf">
+      <PackagePath>PreferencesSettingsFlyout.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

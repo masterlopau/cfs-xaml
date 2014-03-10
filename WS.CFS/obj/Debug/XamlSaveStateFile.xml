@@ -1,5 +1,13 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
     <LocalAssembly PathName="c:\users\drew\documents\projects\ws.cfs\ws.cfs\obj\debug\intermediatexaml\ws.cfs.exe" HashGuid="bab6a689-2422-836f-4951-a875d24510d6" />
+    <ReferenceAssembly PathName="c:\program files (x86)\devexpress 13.2\components\system\winrt\sdk\devexpress.core\13.2\references\commonconfiguration\neutral\devexpress.core.v13.2.dll" HashGuid="26ce8427-ced1-9347-f118-6a99830c1cee" />
+    <ReferenceAssembly PathName="c:\program files (x86)\devexpress 13.2\components\system\winrt\sdk\devexpress.core\13.2\references\commonconfiguration\neutral\devexpress.drawing.v13.2.dll" HashGuid="d13f976b-cc96-f19d-d697-f87205bfb13e" />
+    <ReferenceAssembly PathName="c:\program files (x86)\devexpress 13.2\components\system\winrt\sdk\devexpress.controls\13.2\references\commonconfiguration\neutral\devexpress.ui.xaml.controls.v13.2.dll" HashGuid="d836fd81-6578-82ec-7816-93e422e41d6c" />
+    <ReferenceAssembly PathName="c:\program files (x86)\devexpress 13.2\components\system\winrt\sdk\devexpress.controls\13.2\references\commonconfiguration\neutral\devexpress.ui.xaml.editors.v13.2.dll" HashGuid="53f70116-e13e-5d44-8178-4e784aada095" />
+    <ReferenceAssembly PathName="c:\program files (x86)\devexpress 13.2\components\system\winrt\sdk\devexpress.data\13.2\references\commonconfiguration\neutral\devexpress.ui.xaml.grid.v13.2.dll" HashGuid="fae83474-37b0-403a-d850-e91ed1e4af00" />
+    <ReferenceAssembly PathName="c:\program files (x86)\devexpress 13.2\components\system\winrt\sdk\devexpress.controls\13.2\references\commonconfiguration\neutral\devexpress.ui.xaml.layout.v13.2.dll" HashGuid="1904f4e7-44a8-0eb9-4d49-62ba886e8c17" />
+    <ReferenceAssembly PathName="c:\program files (x86)\devexpress 13.2\components\system\winrt\sdk\devexpress.core\13.2\references\commonconfiguration\neutral\devexpress.ui.xaml.v13.2.dll" HashGuid="055be580-0e51-d0a5-a262-6429ab3f34b6" />
+    <ReferenceAssembly PathName="c:\users\paulo\source\repos\cfs-xaml\packages\newtonsoft.json.6.0.1\lib\netcore45\newtonsoft.json.dll" HashGuid="09c236d1-053d-8905-8ef0-17027540c930" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

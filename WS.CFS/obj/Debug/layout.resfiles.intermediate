@@ -4,5 +4,9 @@ Assets\SplashScreen.scale-100.png
 Assets\StoreLogo.scale-100.png
 AddFeedbackPage.xbf
 App.xbf
+FeedbackListPage.xbf
+LoginPage.xbf
 MainPage.xbf
+PreferencesSettingsFlyout.xbf
 Common\ReadMe.txt
+DataModel\feedbacks.json

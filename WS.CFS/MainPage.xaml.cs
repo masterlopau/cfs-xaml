@@ -105,7 +105,7 @@ namespace WS.CFS
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddFeedbackPage));
+            this.Frame.Navigate(typeof(FeedbackListPage));
         }
     }
 }

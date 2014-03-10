@@ -1,1 +1,1 @@
-C:\Users\palaganj\Documents\Projects\HP\cfs-xaml\WS.CFS\WS.CFS.csproj;neutral
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\WS.CFS.csproj;neutral
