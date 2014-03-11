@@ -115,7 +115,6 @@ C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\DevExpress.UI.Xaml.Layout.
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\DevExpress.UI.Xaml.v13.2.dll
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\WS.CFS.csprojResolveAssemblyReference.cache
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\WS.CFS.csproj.GenerateResource.Cache
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\PreferencesSettingsFlyout.xbf
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\PreferencesSettingsFlyout.g.i.cs
@@ -127,3 +126,8 @@ C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\LoginPage.g.i.cs
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\LoginPage.g.cs
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\LoginPage.xaml
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\LoginPage.xbf
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\DetailsPage.xbf
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\DetailsPage.g.i.cs
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\DetailsPage.g.cs
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\DetailsPage.xaml
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\DetailsPage.xbf

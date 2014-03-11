@@ -113,6 +113,9 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="DataModel\FeedbackDataSource.cs" />
+    <Compile Include="DetailsPage.xaml.cs">
+      <DependentUpon>DetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FeedbackListPage.xaml.cs">
       <DependentUpon>FeedbackListPage.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="AddFeedbackPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

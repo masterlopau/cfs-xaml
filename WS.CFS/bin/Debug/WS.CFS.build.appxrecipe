@@ -255,6 +255,9 @@
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\AddFeedbackPage.xbf">
       <PackagePath>AddFeedbackPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\DetailsPage.xbf">
+      <PackagePath>DetailsPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\FeedbackListPage.xbf">
       <PackagePath>FeedbackListPage.xbf</PackagePath>
     </AppxPackagedFile>

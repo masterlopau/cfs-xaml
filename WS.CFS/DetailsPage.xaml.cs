@@ -14,7 +14,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using WS.CFS.Data;
-using WS.CFS.DataModel;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -23,7 +22,7 @@ namespace WS.CFS
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class FeedbackListPage : Page
+    public sealed partial class DetailsPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -47,14 +46,12 @@ namespace WS.CFS
         }
 
 
-        public FeedbackListPage()
+        public DetailsPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-
-            //grdFeedback.ItemsSource = new ProductList();
         }
 
         /// <summary>
@@ -70,11 +67,13 @@ namespace WS.CFS
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            var feedbackDataSource = (FeedbackDataSource)App.Current.Resources["feedbackDataSource"];
+            var feedbackId = (string)e.NavigationParameter;
+            var feedback = FeedbackDataSource.GetFeedback(feedbackId);
 
-            if (feedbackDataSource != null)
-                this.defaultViewModel["Items"] = feedbackDataSource.Feedbacks;
-
+            if (feedback != null)
+            {
+                this.defaultViewModel["Item"] = feedback;
+            }
         }
 
         /// <summary>
@@ -111,40 +110,5 @@ namespace WS.CFS
         }
 
         #endregion
-
-        private void grdFeedback_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
-        {
-            var grd = (DevExpress.UI.Xaml.Grid.GridControl)sender;
-            var item = (Feedback)grd.SelectedItem;
-
-            this.Frame.Navigate(typeof(DetailsPage), item.Id);
-        }
     }
-
-    public class Product
-    {
-        public string ProductName { get; set; }
-        public string Country { get; set; }
-        public string City { get; set; }
-        public double UnitPrice { get; set; }
-        public int Quantity { get; set; }
-    }
-
-    public class ProductList : System.Collections.ObjectModel.ObservableCollection<Product>
-    {
-        public ProductList()
-            : base()
-        {
-            Add(new Product() { ProductName = "Chang", Country = "UK", City = "Cowes", UnitPrice = 19, Quantity = 10 });
-            Add(new Product() { ProductName = "Gravad lax", Country = "Italy", City = "Reggio Emilia", UnitPrice = 12.5, Quantity = 16 });
-            Add(new Product() { ProductName = "Ravioli Angelo", Country = "Brazil", City = "Rio de Janeiro", UnitPrice = 19, Quantity = 12 });
-            Add(new Product() { ProductName = "Tarte au sucre", Country = "Germany", City = "QUICK-Stop", UnitPrice = 22, Quantity = 50 });
-            Add(new Product() { ProductName = "Steeleye Stout", Country = "USA", City = "Reggio Emilia", UnitPrice = 18, Quantity = 20 });
-            Add(new Product() { ProductName = "Pavlova", Country = "Austria", City = "Graz", UnitPrice = 21, Quantity = 52 });
-            Add(new Product() { ProductName = "Longlife Tofu", Country = "USA", City = "Boise", UnitPrice = 7.75, Quantity = 120 });
-            Add(new Product() { ProductName = "Alice Mutton", Country = "Mexico", City = "México D.F.", UnitPrice = 21, Quantity = 15 });
-            Add(new Product() { ProductName = "Alice Mutton", Country = "Canada", City = "Tsawwassen", UnitPrice = 44, Quantity = 16 });
-        }
-    }
-
 }

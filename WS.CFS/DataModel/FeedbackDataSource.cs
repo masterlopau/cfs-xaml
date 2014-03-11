@@ -25,19 +25,7 @@ namespace WS.CFS.Data
 
         public async Task GetFeedbacksAsync()
         {
-
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M0123", Title = "First Case 1", Note = "complain 1", Status = "InProgress", Type = "Request" });
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M0124", Title = "First Case 2", Note = "complain 1", Status = "InProgress", Type = "Request" });
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M0125", Title = "First Case 3", Note = "complain 1", Status = "InProgress", Type = "Request" });
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M0126", Title = "First Case 4", Note = "complain 1", Status = "InProgress", Type = "Request" });
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M0127", Title = "First Case 5", Note = "complain 1", Status = "InProgress", Type = "Request" });
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M0128", Title = "First Case 6", Note = "complain 1", Status = "InProgress", Type = "Request" });
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M0129", Title = "First Case 7", Note = "complain 1", Status = "InProgress", Type = "Request" });
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M01231", Title = "First Case 8", Note = "complain 1", Status = "InProgress", Type = "Request" });
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M01232", Title = "First Case 9", Note = "complain 1", Status = "InProgress", Type = "Request" });
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M01233", Title = "First Case 10", Note = "complain 1", Status = "InProgress", Type = "Request" });
-            //Feedbacks.Add(new Feedback { Id = "CAS-01000-J8M01234", Title = "First Case 11", Note = "complain 1", Status = "InProgress", Type = "Request" });
-
+           
             bool useLocalData = true;
 
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey(_key))
@@ -97,5 +85,13 @@ namespace WS.CFS.Data
             }
 
         }
+
+        public static Feedback GetFeedback(string id)
+        {
+            var feedbackDataSource = (FeedbackDataSource)App.Current.Resources["feedbackDataSource"];
+
+            return feedbackDataSource.Feedbacks.FirstOrDefault(x=> x.Id == id);
+        }
+
     }
 }
