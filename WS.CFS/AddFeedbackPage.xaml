@@ -11,8 +11,7 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">My Application</x:String>
+
     </Page.Resources>
 
     <!--
@@ -20,7 +19,7 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Background="White" RequestedTheme="Light" RenderTransformOrigin="0.501,0.488">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -32,7 +31,7 @@
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid Background="#FF2C71B9" RequestedTheme="Dark">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
@@ -44,15 +43,27 @@
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="New Feedback" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,44" Foreground="White"/>
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,44" />
         </Grid>
-        <TextBox HorizontalAlignment="Center" Margin="480,98,486,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Height="42" FontSize="20" Padding="10,5" MinHeight="42" BorderBrush="#FFDDDDDD"/>
-        <TextBox HorizontalAlignment="Left" Margin="480,339,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.493,0.503" Width="400" Height="182" Padding="10,5" MinHeight="42" AcceptsReturn="True" BorderBrush="#FFDDDDDD"/>
-        <ComboBox HorizontalAlignment="Left" Margin="480,216,0,0" Grid.Row="1" VerticalAlignment="Top" Width="400" Height="42" MinHeight="42" Padding="10,5" BorderBrush="#FFDDDDDD">
-            <ComboBoxItem Content="Item 1" FontSize="20"/>
-        </ComboBox>
-        <TextBlock HorizontalAlignment="Left" Margin="480,43,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" FontSize="42" Foreground="#FF2C71B9"/>
-        <TextBlock HorizontalAlignment="Left" Margin="480,161,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" FontSize="42" Foreground="#FF2C71B9"/>
-        <TextBlock HorizontalAlignment="Left" Margin="480,284,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" FontSize="42" Foreground="#FF2C71B9"/>
+        <ScrollViewer x:Name="OptionsScrollViewer" Grid.Row="1" HorizontalScrollMode="Auto" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <TextBlock Text="First Name" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
+                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" />
+                    <TextBlock Text="Last Name" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
+                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" />
+                    <TextBlock Text="Email" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
+                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" />
+                    <TextBlock Text="Title" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
+                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" />
+                    <TextBlock Text="Type" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" />
+                    <TextBlock Text="Note" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
+                    <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Width="400" Height="180" AcceptsReturn="True"/>
+                    <AppBarButton x:Name="btnSave" HorizontalAlignment="Right" Icon="Save" Height="70" VerticalAlignment="Top" Click="btnSave_Click"  />
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>

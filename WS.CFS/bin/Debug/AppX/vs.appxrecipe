@@ -23,7 +23,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\WS.CFS.exe">
       <PackagePath>WS.CFS.exe</PackagePath>
-      <Modified>2014-03-11T07:42:38.798</Modified>
+      <Modified>2014-03-12T09:52:03.447</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\References\CommonConfiguration\neutral\DevExpress.Core.v13.2.dll">
       <PackagePath>DevExpress.Core.v13.2.dll</PackagePath>
@@ -335,31 +335,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-03-11T07:42:38.443</Modified>
+      <Modified>2014-03-12T09:52:03.123</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\AddFeedbackPage.xbf">
       <PackagePath>AddFeedbackPage.xbf</PackagePath>
-      <Modified>2014-03-10T18:44:49.568</Modified>
+      <Modified>2014-03-12T09:52:03.125</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\DetailsPage.xbf">
       <PackagePath>DetailsPage.xbf</PackagePath>
-      <Modified>2014-03-11T07:42:38.445</Modified>
+      <Modified>2014-03-12T09:52:03.126</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\FeedbackListPage.xbf">
       <PackagePath>FeedbackListPage.xbf</PackagePath>
-      <Modified>2014-03-11T07:42:38.446</Modified>
+      <Modified>2014-03-12T09:52:03.126</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\LoginPage.xbf">
       <PackagePath>LoginPage.xbf</PackagePath>
-      <Modified>2014-03-11T07:42:38.446</Modified>
+      <Modified>2014-03-12T09:52:03.127</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2014-03-11T07:42:38.447</Modified>
+      <Modified>2014-03-12T09:52:03.127</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\PreferencesSettingsFlyout.xbf">
       <PackagePath>PreferencesSettingsFlyout.xbf</PackagePath>
-      <Modified>2014-03-11T07:42:38.447</Modified>
+      <Modified>2014-03-12T09:52:03.128</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

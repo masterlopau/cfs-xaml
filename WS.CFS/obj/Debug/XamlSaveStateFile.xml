@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\paulo\source\repos\cfs-xaml\ws.cfs\obj\debug\intermediatexaml\ws.cfs.exe" HashGuid="c653c6ac-0512-2dda-402e-371df083a95d" />
+    <LocalAssembly PathName="c:\users\paulo\source\repos\cfs-xaml\ws.cfs\obj\debug\intermediatexaml\ws.cfs.exe" HashGuid="5c94d018-eabd-df0a-6f0c-6f564a61ed52" />
     <ReferenceAssembly PathName="c:\program files (x86)\devexpress 13.2\components\system\winrt\sdk\devexpress.core\13.2\references\commonconfiguration\neutral\devexpress.core.v13.2.dll" HashGuid="26ce8427-ced1-9347-f118-6a99830c1cee" />
     <ReferenceAssembly PathName="c:\program files (x86)\devexpress 13.2\components\system\winrt\sdk\devexpress.core\13.2\references\commonconfiguration\neutral\devexpress.drawing.v13.2.dll" HashGuid="d13f976b-cc96-f19d-d697-f87205bfb13e" />
     <ReferenceAssembly PathName="c:\program files (x86)\devexpress 13.2\components\system\winrt\sdk\devexpress.controls\13.2\references\commonconfiguration\neutral\devexpress.ui.xaml.controls.v13.2.dll" HashGuid="d836fd81-6578-82ec-7816-93e422e41d6c" />

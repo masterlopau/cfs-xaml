@@ -119,6 +119,11 @@ namespace WS.CFS
 
             this.Frame.Navigate(typeof(DetailsPage), item.Id);
         }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AddFeedbackPage));
+        }
     }
 
     public class Product

@@ -44,7 +44,6 @@ namespace WS.CFS
             get { return this.navigationHelper; }
         }
 
-
         public AddFeedbackPage()
         {
             this.InitializeComponent();
@@ -102,6 +101,10 @@ namespace WS.CFS
         }
 
         #endregion
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+        }
 
     }
 }
