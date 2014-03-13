@@ -13,6 +13,7 @@ namespace WS.CFS.DataModel
         public string Type { get; set; }
         public string Note { get; set; }
         public string Status { get; set; }
+        public string Description { get; set; }
 
     }
 }

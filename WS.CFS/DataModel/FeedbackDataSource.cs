@@ -23,9 +23,21 @@ namespace WS.CFS.Data
             get { return this._feedbacks; }
         }
 
+        public static IReadOnlyCollection<FeedbackType> GetFeedbackTypes()
+        {
+            var types = new List<FeedbackType>();
+            types.Add(new FeedbackType { Text = "Department of Education", Value = "DEPED" });
+            types.Add(new FeedbackType { Text = "Department of Public Works & Highways", Value = "DPWH" });
+            types.Add(new FeedbackType { Text = "Department of Trade and Industry", Value = "DTI" });
+            types.Add(new FeedbackType { Text = "Department of Labor and Employment", Value = "DOLE" });
+
+            return types;            
+            
+        }
+
         public async Task GetFeedbacksAsync()
         {
-           
+
             bool useLocalData = true;
 
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey(_key))
@@ -58,7 +70,7 @@ namespace WS.CFS.Data
 
                     jsonText = await response.Content.ReadAsStringAsync();
 
-                    
+
 
                 }
                 catch (OperationCanceledException)
@@ -70,7 +82,7 @@ namespace WS.CFS.Data
 
             try
             {
-                
+
                 var feedbacks = JsonConvert.DeserializeObject<List<Feedback>>(jsonText);
 
                 foreach (var f in feedbacks)
@@ -80,8 +92,8 @@ namespace WS.CFS.Data
             }
             catch (Exception)
             {
-                
-               new MessageDialog("Invalid JSON data").ShowAsync();
+
+                new MessageDialog("Invalid JSON data").ShowAsync();
             }
 
         }
@@ -90,8 +102,40 @@ namespace WS.CFS.Data
         {
             var feedbackDataSource = (FeedbackDataSource)App.Current.Resources["feedbackDataSource"];
 
-            return feedbackDataSource.Feedbacks.FirstOrDefault(x=> x.Id == id);
+            return feedbackDataSource.Feedbacks.FirstOrDefault(x => x.Id == id);
         }
 
+        public static async void CreateNewFeedbackAsync(SubmitFeedback request)
+        {
+            bool useLocalData = true;
+
+            //if (ApplicationData.Current.LocalSettings.Values.ContainsKey(_key))
+            //    useLocalData = (bool)ApplicationData.Current.LocalSettings.Values[_key];
+
+            string jsonText = null;
+
+            if (useLocalData)
+            {
+                //Uri dataUri = new Uri(_baseUri + "DataModel/feedbacks.json");
+                //StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);
+
+            }
+            else
+            {
+                _baseUri = "http://16.179.108.104:8081/";
+                var cts = new CancellationTokenSource();
+                cts.CancelAfter(10000); // Wait up to 10 seconds
+
+                var httpClient = new HttpClient();
+                var data = JsonConvert.SerializeObject(request);
+
+                var response = await httpClient.PostAsync(new Uri(_baseUri + "api/feedback/submit"),
+                            new HttpStringContent(data, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"))
+                            .AsTask(cts.Token);
+
+                await new MessageDialog("You have successfully submitted a feedback.").ShowAsync();
+
+            }
+        }
     }
 }

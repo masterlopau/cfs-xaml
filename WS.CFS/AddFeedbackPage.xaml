@@ -58,7 +58,8 @@
                     <TextBlock Text="Title" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
                     <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" />
                     <TextBlock Text="Type" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" />
+                    <ComboBox x:Name="cmbType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" />
+                    
                     <TextBlock Text="Note" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
                     <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Width="400" Height="180" AcceptsReturn="True"/>
                     <AppBarButton x:Name="btnSave" HorizontalAlignment="Right" Icon="Save" Height="70" VerticalAlignment="Top" Click="btnSave_Click"  />

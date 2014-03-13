@@ -45,8 +45,22 @@
             <TextBlock x:Name="pageTitle" Text="{Binding Id}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
+        <Grid Grid.Row="1">
 
-        <Grid x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="20">
+
+                <TextBlock Text="Title" Style="{StaticResource SmallHeaderTextBlockStyle}" Padding="0 30 0 20"/>
+                <TextBlock Text="{Binding Title}" Style="{StaticResource SubheaderTextBlockStyle}" TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" Margin="30,0,0,0" />
+                <TextBlock Text="Type" Style="{StaticResource SmallHeaderTextBlockStyle}" Padding="0 30 0 20"/>
+                <TextBlock Text="{Binding Type}" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" Margin="30,0,0,0" />
+                <TextBlock Text="Status" Style="{StaticResource SmallHeaderTextBlockStyle}" Padding="0 30 0 20"/>
+                <TextBlock Text="{Binding Status}" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" Margin="30,0,0,0" />
+                <TextBlock Text="Note" Style="{StaticResource SmallHeaderTextBlockStyle}" Padding="0 30 0 20"/>
+                <TextBlock Text="{Binding Note}" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Height="180" Margin="30,0,0,0" />
+            </StackPanel>
+        </Grid>
+
+        <!--<Grid x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="100"/>
@@ -65,12 +79,12 @@
             <TextBlock Style="{StaticResource SmallHeaderTextBlockStyle}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0 0 10" Text="{Binding Status}" />
             <TextBlock Style="{StaticResource SmallHeaderTextBlockStyle}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 0 20 10" Text="Description :" />
             <TextBlock Style="{StaticResource SmallHeaderTextBlockStyle}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0 20 10" TextWrapping="Wrap" Text="{Binding Note}" />
-            <!--<StackPanel Margin="20" Background="Blue" HorizontalAlignment="Center" Orientation="Horizontal">
+            --><!--<StackPanel Margin="20" Background="Blue" HorizontalAlignment="Center" Orientation="Horizontal">
                 <TextBlock x:Name="firstTextBlock" FontSize="30" >First TextBlock</TextBlock>
                 <TextBlock x:Name="secondTextBlock" FontSize="30" >Second TextBlock</TextBlock>
                 <TextBlock x:Name="thirdTextBlock" FontSize="30" >Third TextBlock</TextBlock>
-            </StackPanel>-->
-        </Grid>
+            </StackPanel>--><!--
+        </Grid>-->
         
     </Grid>
 

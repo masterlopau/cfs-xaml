@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using WS.CFS.Data;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -65,6 +66,9 @@ namespace WS.CFS
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            cmbType.ItemsSource = FeedbackDataSource.GetFeedbackTypes();
+            cmbType.DisplayMemberPath = "Text";
+            cmbType.SelectedValuePath = "Value";
         }
 
         /// <summary>
@@ -104,6 +108,7 @@ namespace WS.CFS
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+
         }
 
     }

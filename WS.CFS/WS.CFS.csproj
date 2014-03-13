@@ -113,6 +113,8 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="DataModel\FeedbackDataSource.cs" />
+    <Compile Include="DataModel\FeedbackType.cs" />
+    <Compile Include="DataModel\SubmitFeedback.cs" />
     <Compile Include="DetailsPage.xaml.cs">
       <DependentUpon>DetailsPage.xaml</DependentUpon>
     </Compile>

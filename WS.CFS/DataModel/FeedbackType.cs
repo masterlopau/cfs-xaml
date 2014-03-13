@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace WS.CFS.DataModel
 {
-    public class User
+    public class FeedbackType
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
+        public string Value { get; set; }
+        public string Text { get; set; }
     }
 }
