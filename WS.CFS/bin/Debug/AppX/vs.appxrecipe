@@ -6,7 +6,7 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>86e46273-dbab-4712-bc07-3e23be8ce03e</PackageIdentityName>
-    <RegisteredManifestChecksum>003309E8A82867F9BB5C9A960B62406C7A8F91FD295C61126264FFACEDF857C7</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>9D5F985480FEA010CDE320A986D2BF7CBFE0BA5D7EFAD04BC1F0B480D692194E</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>86e46273-dbab-4712-bc07-3e23be8ce03e_1.0.0.0_neutral__c8j3q6jfcdty6</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>86e46273-dbab-4712-bc07-3e23be8ce03e_c8j3q6jfcdty6!App</RegisteredUserModeAppID>
     <RegisteredPackageID>86e46273-dbab-4712-bc07-3e23be8ce03e</RegisteredPackageID>
@@ -17,13 +17,13 @@
     <AppXManifest Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-03-13T13:29:15.983</Modified>
+      <Modified>2014-03-16T07:46:31.128</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\WS.CFS.exe">
       <PackagePath>WS.CFS.exe</PackagePath>
-      <Modified>2014-03-13T13:33:04.165</Modified>
+      <Modified>2014-03-16T08:34:07.301</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\DevExpress 13.2\Components\System\WinRT\SDK\DevExpress.Core\13.2\References\CommonConfiguration\neutral\DevExpress.Core.v13.2.dll">
       <PackagePath>DevExpress.Core.v13.2.dll</PackagePath>
@@ -335,35 +335,39 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-03-13T13:29:15.123</Modified>
+      <Modified>2014-03-14T09:56:12.667</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\AddFeedbackPage.xbf">
       <PackagePath>AddFeedbackPage.xbf</PackagePath>
-      <Modified>2014-03-13T13:29:15.126</Modified>
+      <Modified>2014-03-16T07:25:08.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\DetailsPage.xbf">
       <PackagePath>DetailsPage.xbf</PackagePath>
-      <Modified>2014-03-13T13:29:15.128</Modified>
+      <Modified>2014-03-16T08:34:06.987</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\FeedbackListPage.xbf">
       <PackagePath>FeedbackListPage.xbf</PackagePath>
-      <Modified>2014-03-13T13:29:15.131</Modified>
+      <Modified>2014-03-13T15:08:14.470</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\LoginPage.xbf">
       <PackagePath>LoginPage.xbf</PackagePath>
-      <Modified>2014-03-13T13:29:15.133</Modified>
+      <Modified>2014-03-13T15:08:14.471</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2014-03-13T13:29:15.136</Modified>
+      <Modified>2014-03-13T15:08:14.471</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\PreferencesSettingsFlyout.xbf">
       <PackagePath>PreferencesSettingsFlyout.xbf</PackagePath>
-      <Modified>2014-03-13T13:29:15.139</Modified>
+      <Modified>2014-03-13T15:08:14.473</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\SearchResultsPage.xbf">
+      <PackagePath>SearchResultsPage.xbf</PackagePath>
+      <Modified>2014-03-16T08:34:06.989</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-03-13T13:29:15.716</Modified>
+      <Modified>2014-03-16T07:46:31.051</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

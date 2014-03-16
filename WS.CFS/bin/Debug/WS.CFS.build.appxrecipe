@@ -270,6 +270,9 @@
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\PreferencesSettingsFlyout.xbf">
       <PackagePath>PreferencesSettingsFlyout.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\SearchResultsPage.xbf">
+      <PackagePath>SearchResultsPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>

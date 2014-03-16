@@ -47,16 +47,16 @@
         </Grid>
         <Grid Grid.Row="1">
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="20">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="40 20 20 20">
 
                 <TextBlock Text="Title" Style="{StaticResource SmallHeaderTextBlockStyle}" Padding="0 30 0 20"/>
-                <TextBlock Text="{Binding Title}" Style="{StaticResource SubheaderTextBlockStyle}" TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" Margin="30,0,0,0" />
+                <TextBlock Text="{Binding Title}" Style="{StaticResource SubheaderTextBlockStyle}" TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" Margin="50,0,0,0" />
                 <TextBlock Text="Type" Style="{StaticResource SmallHeaderTextBlockStyle}" Padding="0 30 0 20"/>
-                <TextBlock Text="{Binding Type}" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" Margin="30,0,0,0" />
+                <TextBlock Text="{Binding Type}" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" Margin="50,0,0,0" />
                 <TextBlock Text="Status" Style="{StaticResource SmallHeaderTextBlockStyle}" Padding="0 30 0 20"/>
-                <TextBlock Text="{Binding Status}" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" Margin="30,0,0,0" />
+                <TextBlock Text="{Binding Status}" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" Margin="50,0,0,0" />
                 <TextBlock Text="Note" Style="{StaticResource SmallHeaderTextBlockStyle}" Padding="0 30 0 20"/>
-                <TextBlock Text="{Binding Note}" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Height="180" Margin="30,0,0,0" />
+                <TextBlock Text="{Binding Note}" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Height="180" Margin="50,0,0,0" />
             </StackPanel>
         </Grid>
 

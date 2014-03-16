@@ -115,6 +115,20 @@ namespace WS.CFS
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            //Windows.ApplicationModel.Search.SearchPane.GetForCurrentView().SuggestionsRequested += App_SuggestionsRequested;
+        }
+        private readonly string[] _suggestions = { "Apple", "Banana", "Orange" };
+        void App_SuggestionsRequested(Windows.ApplicationModel.Search.SearchPane sender, Windows.ApplicationModel.Search.SearchPaneSuggestionsRequestedEventArgs args)
+        {
+            var request = args.Request;
+            foreach (var suggestion in _suggestions)
+            {
+                if (suggestion.StartsWith(args.QueryText, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    request.SearchSuggestionCollection.AppendQuerySuggestion(suggestion);
+                }
+            }
         }
 
         /// <summary>
@@ -152,6 +166,13 @@ namespace WS.CFS
             // Add a preferences command to the settings pane
             var preferences = new SettingsCommand("preferences", "Preferences", (handler) => new PreferencesSettingsFlyout().Show());
             args.Request.ApplicationCommands.Add(preferences);
+        }
+
+        protected override void OnSearchActivated(SearchActivatedEventArgs args)
+        {
+            if (Window.Current.Content == null) return;
+            var rootFrame = Window.Current.Content as Frame;
+            if (rootFrame != null) rootFrame.Navigate(typeof(SearchResultsPage), args.QueryText);
         }
     }
 }

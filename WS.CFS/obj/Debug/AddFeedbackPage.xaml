@@ -14,12 +14,13 @@
 
     </Page.Resources>
 
+
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" DataContext="{Binding NewFeedback}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -49,21 +50,21 @@
             <Grid>
                 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                    <TextBlock Text="First Name" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
-                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" />
+                    <!--<TextBlock Text="First Name" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
+                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" Text="{Binding User.FirstName, Mode=TwoWay}"  />
                     <TextBlock Text="Last Name" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
-                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" />
+                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" Text="{Binding User.LastName, Mode=TwoWay}" />
                     <TextBlock Text="Email" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
-                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" />
+                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" Text="{Binding User.Email, Mode=TwoWay}" />-->
                     <TextBlock Text="Title" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
-                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" />
+                    <TextBox TextWrapping="Wrap" Width="400" Height="40" HorizontalAlignment="Left" Text="{Binding Title}" />
                     <TextBlock Text="Type" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
-                    <ComboBox x:Name="cmbType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" />
+                    <ComboBox x:Name="cmbType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="45" SelectedValue ="{Binding Type, Mode=TwoWay}" />
                     
-                    <TextBlock Text="Note" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20"/>
-                    <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Width="400" Height="180" AcceptsReturn="True"/>
-                    <AppBarButton x:ConnectionId='1' x:Name="btnSave" HorizontalAlignment="Right" Icon="Save" Height="70" VerticalAlignment="Top"                        />
-                </StackPanel>
+                    <TextBlock Text="Note" Style="{StaticResource SubheaderTextBlockStyle}" Padding="0 30 0 20" />
+                    <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Width="400" Height="180" Text="{Binding Note, Mode=TwoWay}" />
+                    <AppBarButton x:ConnectionId='1' x:Name="btnSave" HorizontalAlignment="Right" Icon="Save" Height="70"  VerticalAlignment="Top"                       Width="80"  />
+                </StackPanel>   
             </Grid>
         </ScrollViewer>
     </Grid>

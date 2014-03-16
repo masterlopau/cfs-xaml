@@ -132,3 +132,8 @@ C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\DetailsPage.g.cs
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\DetailsPage.xaml
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\DetailsPage.xbf
 C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\WS.CFS.csprojResolveAssemblyReference.cache
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\bin\Debug\SearchResultsPage.xbf
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\SearchResultsPage.g.i.cs
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\SearchResultsPage.g.cs
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\SearchResultsPage.xaml
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS\obj\Debug\SearchResultsPage.xbf

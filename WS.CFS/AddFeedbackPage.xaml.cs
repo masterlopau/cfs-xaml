@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using WS.CFS.Data;
+using WS.CFS.DataModel;
+using Windows.UI.Popups;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -36,6 +38,9 @@ namespace WS.CFS
             get { return this.defaultViewModel; }
         }
 
+       
+        public Feedback NewFeedback { get; set; }
+
         /// <summary>
         /// NavigationHelper is used on each page to aid in navigation and 
         /// process lifetime management
@@ -50,7 +55,12 @@ namespace WS.CFS
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
-            this.navigationHelper.SaveState += navigationHelper_SaveState;
+            this.navigationHelper.SaveState += navigationHelper_SaveState; ;
+            this.DataContext = new SubmitFeedback() { Feedback = new Feedback(), User = new User() };
+
+            //SubmitFeedback = new SubmitFeedback();
+            //SubmitFeedback.Feedback = new Feedback();
+            //SubmitFeedback.User = new User();
         }
 
         /// <summary>
@@ -108,6 +118,11 @@ namespace WS.CFS
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            var submit = new SubmitFeedback();
+            submit.Feedback = NewFeedback;
+
+            FeedbackDataSource.CreateNewFeedbackAsync(submit);
+
 
         }
 

@@ -133,7 +133,7 @@ namespace WS.CFS.Data
                             new HttpStringContent(data, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json"))
                             .AsTask(cts.Token);
 
-                await new MessageDialog("You have successfully submitted a feedback.").ShowAsync();
+                new MessageDialog("You have successfully submitted a feedback.").ShowAsync();
 
             }
         }

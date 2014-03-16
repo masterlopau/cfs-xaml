@@ -9,5 +9,6 @@ FeedbackListPage.xbf
 LoginPage.xbf
 MainPage.xbf
 PreferencesSettingsFlyout.xbf
+SearchResultsPage.xbf
 Common\ReadMe.txt
 DataModel\feedbacks.json
