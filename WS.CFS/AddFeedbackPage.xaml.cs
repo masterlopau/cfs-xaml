@@ -38,8 +38,6 @@ namespace WS.CFS
             get { return this.defaultViewModel; }
         }
 
-       
-        public Feedback NewFeedback { get; set; }
 
         /// <summary>
         /// NavigationHelper is used on each page to aid in navigation and 
@@ -52,15 +50,12 @@ namespace WS.CFS
 
         public AddFeedbackPage()
         {
+
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState; ;
-            this.DataContext = new SubmitFeedback() { Feedback = new Feedback(), User = new User() };
 
-            //SubmitFeedback = new SubmitFeedback();
-            //SubmitFeedback.Feedback = new Feedback();
-            //SubmitFeedback.User = new User();
         }
 
         /// <summary>
@@ -79,6 +74,7 @@ namespace WS.CFS
             cmbType.ItemsSource = FeedbackDataSource.GetFeedbackTypes();
             cmbType.DisplayMemberPath = "Text";
             cmbType.SelectedValuePath = "Value";
+            cmbType.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -118,10 +114,28 @@ namespace WS.CFS
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            var submit = new SubmitFeedback();
-            submit.Feedback = NewFeedback;
+            try
+            {
 
-            FeedbackDataSource.CreateNewFeedbackAsync(submit);
+                var submit = new SubmitFeedback();
+
+                submit.User = FeedbackDataSource.UserInfo;
+                submit.Feedback = new Feedback
+                {
+                    Note = txtNote.Text,
+                    Title = txtTitle.Text,
+                    Type = ((FeedbackType)cmbType.SelectedItem).Value
+                };
+
+                FeedbackDataSource.CreateNewFeedbackAsync(submit);
+
+
+                new MessageDialog("You have successfully submitted a feedback.").ShowAsync();
+            }
+            catch (Exception ex)
+            {
+                 var dialog = new MessageDialog("The app has encountered an error while saving your request. Error : " + ex.Message).ShowAsync();
+            }
 
 
         }

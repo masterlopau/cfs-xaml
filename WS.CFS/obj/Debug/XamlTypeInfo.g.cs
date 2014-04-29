@@ -60,7 +60,7 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 xamlType = CreateXamlType(typeIndex);
             }
             var userXamlType = xamlType as global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType;
-            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub))
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
             {
                 global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
                 if (libXamlType != null)
@@ -96,7 +96,7 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 xamlType = CreateXamlType(typeIndex);
             }
             var userXamlType = xamlType as global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType;
-            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub))
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
             {
                 global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
                 if (libXamlType != null)
@@ -148,7 +148,7 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[80];
+            _typeNameTable = new string[79];
             _typeNameTable[0] = "WS.CFS.Data.FeedbackDataSource";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "System.Collections.ObjectModel.ObservableCollection`1<WS.CFS.DataModel.Feedback>";
@@ -223,14 +223,13 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
             _typeNameTable[71] = "DevExpress.UI.Xaml.Grid.INotifyCurrentViewChanged";
             _typeNameTable[72] = "WS.CFS.FeedbackListPage";
             _typeNameTable[73] = "WS.CFS.LoginPage";
-            _typeNameTable[74] = "WS.CFS.MainPage";
-            _typeNameTable[75] = "WS.CFS.PreferencesSettingsFlyout";
-            _typeNameTable[76] = "Windows.UI.Xaml.Controls.SettingsFlyout";
-            _typeNameTable[77] = "Windows.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[78] = "WS.CFS.Common.BooleanToVisibilityConverter";
-            _typeNameTable[79] = "WS.CFS.SearchResultsPage";
+            _typeNameTable[74] = "WS.CFS.PreferencesSettingsFlyout";
+            _typeNameTable[75] = "Windows.UI.Xaml.Controls.SettingsFlyout";
+            _typeNameTable[76] = "Windows.UI.Xaml.Controls.ContentControl";
+            _typeNameTable[77] = "WS.CFS.Common.BooleanToVisibilityConverter";
+            _typeNameTable[78] = "WS.CFS.SearchResultsPage";
 
-            _typeTable = new global::System.Type[80];
+            _typeTable = new global::System.Type[79];
             _typeTable[0] = typeof(global::WS.CFS.Data.FeedbackDataSource);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::WS.CFS.DataModel.Feedback>);
@@ -305,12 +304,11 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
             _typeTable[71] = typeof(global::DevExpress.UI.Xaml.Grid.INotifyCurrentViewChanged);
             _typeTable[72] = typeof(global::WS.CFS.FeedbackListPage);
             _typeTable[73] = typeof(global::WS.CFS.LoginPage);
-            _typeTable[74] = typeof(global::WS.CFS.MainPage);
-            _typeTable[75] = typeof(global::WS.CFS.PreferencesSettingsFlyout);
-            _typeTable[76] = typeof(global::Windows.UI.Xaml.Controls.SettingsFlyout);
-            _typeTable[77] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
-            _typeTable[78] = typeof(global::WS.CFS.Common.BooleanToVisibilityConverter);
-            _typeTable[79] = typeof(global::WS.CFS.SearchResultsPage);
+            _typeTable[74] = typeof(global::WS.CFS.PreferencesSettingsFlyout);
+            _typeTable[75] = typeof(global::Windows.UI.Xaml.Controls.SettingsFlyout);
+            _typeTable[76] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
+            _typeTable[77] = typeof(global::WS.CFS.Common.BooleanToVisibilityConverter);
+            _typeTable[78] = typeof(global::WS.CFS.SearchResultsPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -363,10 +361,9 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
         private object Activate_40_Collection() { return new global::System.Collections.ObjectModel.Collection<global::DevExpress.UI.Xaml.Grid.GridColumnBase>(); }
         private object Activate_72_FeedbackListPage() { return new global::WS.CFS.FeedbackListPage(); }
         private object Activate_73_LoginPage() { return new global::WS.CFS.LoginPage(); }
-        private object Activate_74_MainPage() { return new global::WS.CFS.MainPage(); }
-        private object Activate_75_PreferencesSettingsFlyout() { return new global::WS.CFS.PreferencesSettingsFlyout(); }
-        private object Activate_78_BooleanToVisibilityConverter() { return new global::WS.CFS.Common.BooleanToVisibilityConverter(); }
-        private object Activate_79_SearchResultsPage() { return new global::WS.CFS.SearchResultsPage(); }
+        private object Activate_74_PreferencesSettingsFlyout() { return new global::WS.CFS.PreferencesSettingsFlyout(); }
+        private object Activate_77_BooleanToVisibilityConverter() { return new global::WS.CFS.Common.BooleanToVisibilityConverter(); }
+        private object Activate_78_SearchResultsPage() { return new global::WS.CFS.SearchResultsPage(); }
         private void VectorAdd_2_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::WS.CFS.DataModel.Feedback>)instance;
@@ -473,6 +470,7 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_0_FeedbackDataSource;
                 userType.AddMemberName("Feedbacks");
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
@@ -503,6 +501,7 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 userType.AddMemberName("Note");
                 userType.AddMemberName("Status");
                 userType.AddMemberName("Description");
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
@@ -514,8 +513,8 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_6_AddFeedbackPage;
                 userType.AddMemberName("DefaultViewModel");
-                userType.AddMemberName("NewFeedback");
                 userType.AddMemberName("NavigationHelper");
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
@@ -531,12 +530,14 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.DictionaryAdd = MapAdd_9_ObservableDictionary;
                 userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 10:   //  WS.CFS.Common.NavigationHelper
                 userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
@@ -549,6 +550,7 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 userType.Activator = Activate_12_DetailsPage;
                 userType.AddMemberName("DefaultViewModel");
                 userType.AddMemberName("NavigationHelper");
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
@@ -1098,48 +1100,45 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 userType.Activator = Activate_72_FeedbackListPage;
                 userType.AddMemberName("DefaultViewModel");
                 userType.AddMemberName("NavigationHelper");
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 73:   //  WS.CFS.LoginPage
                 userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_73_LoginPage;
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 74:   //  WS.CFS.MainPage
-                userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_74_MainPage;
-                userType.AddMemberName("DefaultViewModel");
-                userType.AddMemberName("NavigationHelper");
-                xamlType = userType;
-                break;
-
-            case 75:   //  WS.CFS.PreferencesSettingsFlyout
+            case 74:   //  WS.CFS.PreferencesSettingsFlyout
                 userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.SettingsFlyout"));
-                userType.Activator = Activate_75_PreferencesSettingsFlyout;
+                userType.Activator = Activate_74_PreferencesSettingsFlyout;
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 76:   //  Windows.UI.Xaml.Controls.SettingsFlyout
+            case 75:   //  Windows.UI.Xaml.Controls.SettingsFlyout
                 xamlType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 77:   //  Windows.UI.Xaml.Controls.ContentControl
+            case 76:   //  Windows.UI.Xaml.Controls.ContentControl
                 xamlType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 78:   //  WS.CFS.Common.BooleanToVisibilityConverter
+            case 77:   //  WS.CFS.Common.BooleanToVisibilityConverter
                 userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_78_BooleanToVisibilityConverter;
+                userType.Activator = Activate_77_BooleanToVisibilityConverter;
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 79:   //  WS.CFS.SearchResultsPage
+            case 78:   //  WS.CFS.SearchResultsPage
                 userType = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_79_SearchResultsPage;
+                userType.Activator = Activate_78_SearchResultsPage;
                 userType.AddMemberName("DefaultViewModel");
                 userType.AddMemberName("NavigationHelper");
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
             }
@@ -1280,1416 +1279,1396 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
             var that = (global::WS.CFS.AddFeedbackPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_8_AddFeedbackPage_NewFeedback(object instance)
-        {
-            var that = (global::WS.CFS.AddFeedbackPage)instance;
-            return that.NewFeedback;
-        }
-        private void set_8_AddFeedbackPage_NewFeedback(object instance, object Value)
-        {
-            var that = (global::WS.CFS.AddFeedbackPage)instance;
-            that.NewFeedback = (global::WS.CFS.DataModel.Feedback)Value;
-        }
-        private object get_9_AddFeedbackPage_NavigationHelper(object instance)
+        private object get_8_AddFeedbackPage_NavigationHelper(object instance)
         {
             var that = (global::WS.CFS.AddFeedbackPage)instance;
             return that.NavigationHelper;
         }
-        private object get_10_DetailsPage_DefaultViewModel(object instance)
+        private object get_9_DetailsPage_DefaultViewModel(object instance)
         {
             var that = (global::WS.CFS.DetailsPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_11_DetailsPage_NavigationHelper(object instance)
+        private object get_10_DetailsPage_NavigationHelper(object instance)
         {
             var that = (global::WS.CFS.DetailsPage)instance;
             return that.NavigationHelper;
         }
-        private object get_12_DataControlBase_ItemsSource(object instance)
+        private object get_11_DataControlBase_ItemsSource(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ItemsSource;
         }
-        private void set_12_DataControlBase_ItemsSource(object instance, object Value)
+        private void set_11_DataControlBase_ItemsSource(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ItemsSource = (global::System.Object)Value;
         }
-        private object get_13_DataControlBase_AutoGenerateColumns(object instance)
+        private object get_12_DataControlBase_AutoGenerateColumns(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.AutoGenerateColumns;
         }
-        private void set_13_DataControlBase_AutoGenerateColumns(object instance, object Value)
+        private void set_12_DataControlBase_AutoGenerateColumns(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.AutoGenerateColumns = (global::System.Boolean)Value;
         }
-        private object get_14_GridControl_ActualItemTemplateSelector(object instance)
+        private object get_13_GridControl_ActualItemTemplateSelector(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.ActualItemTemplateSelector;
         }
-        private object get_15_GridControl_AllowHorizontalScrollingVirtualization(object instance)
+        private object get_14_GridControl_AllowHorizontalScrollingVirtualization(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.AllowHorizontalScrollingVirtualization;
         }
-        private void set_15_GridControl_AllowHorizontalScrollingVirtualization(object instance, object Value)
+        private void set_14_GridControl_AllowHorizontalScrollingVirtualization(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.AllowHorizontalScrollingVirtualization = (global::System.Boolean)Value;
         }
-        private object get_16_GridControl_ItemMinHeight(object instance)
+        private object get_15_GridControl_ItemMinHeight(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.ItemMinHeight;
         }
-        private void set_16_GridControl_ItemMinHeight(object instance, object Value)
+        private void set_15_GridControl_ItemMinHeight(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.ItemMinHeight = (global::System.Double)Value;
         }
-        private object get_17_GridControl_ItemContainerStyle(object instance)
+        private object get_16_GridControl_ItemContainerStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.ItemContainerStyle;
         }
-        private void set_17_GridControl_ItemContainerStyle(object instance, object Value)
+        private void set_16_GridControl_ItemContainerStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.ItemContainerStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_18_GridControl_ItemTemplate(object instance)
+        private object get_17_GridControl_ItemTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.ItemTemplate;
         }
-        private void set_18_GridControl_ItemTemplate(object instance, object Value)
+        private void set_17_GridControl_ItemTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.ItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_19_GridControl_ItemTemplateSelector(object instance)
+        private object get_18_GridControl_ItemTemplateSelector(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.ItemTemplateSelector;
         }
-        private void set_19_GridControl_ItemTemplateSelector(object instance, object Value)
+        private void set_18_GridControl_ItemTemplateSelector(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.ItemTemplateSelector = (global::Windows.UI.Xaml.Controls.DataTemplateSelector)Value;
         }
-        private object get_20_GridControl_AutoWidth(object instance)
+        private object get_19_GridControl_AutoWidth(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.AutoWidth;
         }
-        private void set_20_GridControl_AutoWidth(object instance, object Value)
+        private void set_19_GridControl_AutoWidth(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.AutoWidth = (global::System.Boolean)Value;
         }
-        private object get_21_GridControl_LeftDataAreaIndent(object instance)
+        private object get_20_GridControl_LeftDataAreaIndent(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.LeftDataAreaIndent;
         }
-        private void set_21_GridControl_LeftDataAreaIndent(object instance, object Value)
+        private void set_20_GridControl_LeftDataAreaIndent(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.LeftDataAreaIndent = (global::System.Double)Value;
         }
-        private object get_22_GridControl_RightDataAreaIndent(object instance)
+        private object get_21_GridControl_RightDataAreaIndent(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.RightDataAreaIndent;
         }
-        private void set_22_GridControl_RightDataAreaIndent(object instance, object Value)
+        private void set_21_GridControl_RightDataAreaIndent(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.RightDataAreaIndent = (global::System.Double)Value;
         }
-        private object get_23_GridControl_HorizontalViewport(object instance)
+        private object get_22_GridControl_HorizontalViewport(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.HorizontalViewport;
         }
-        private object get_24_GridControl_LeftGroupAreaIndent(object instance)
+        private object get_23_GridControl_LeftGroupAreaIndent(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.LeftGroupAreaIndent;
         }
-        private void set_24_GridControl_LeftGroupAreaIndent(object instance, object Value)
+        private void set_23_GridControl_LeftGroupAreaIndent(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.LeftGroupAreaIndent = (global::System.Double)Value;
         }
-        private object get_25_GridControl_GroupSummaryDisplayMode(object instance)
+        private object get_24_GridControl_GroupSummaryDisplayMode(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.GroupSummaryDisplayMode;
         }
-        private void set_25_GridControl_GroupSummaryDisplayMode(object instance, object Value)
+        private void set_24_GridControl_GroupSummaryDisplayMode(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.GroupSummaryDisplayMode = (global::DevExpress.UI.Xaml.Grid.GroupSummaryDisplayMode)Value;
         }
-        private object get_26_GridControl_GroupColumnSummaryContentStyle(object instance)
+        private object get_25_GridControl_GroupColumnSummaryContentStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.GroupColumnSummaryContentStyle;
         }
-        private void set_26_GridControl_GroupColumnSummaryContentStyle(object instance, object Value)
+        private void set_25_GridControl_GroupColumnSummaryContentStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.GroupColumnSummaryContentStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_27_GridControl_AutoExpandAllGroups(object instance)
+        private object get_26_GridControl_AutoExpandAllGroups(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.AutoExpandAllGroups;
         }
-        private void set_27_GridControl_AutoExpandAllGroups(object instance, object Value)
+        private void set_26_GridControl_AutoExpandAllGroups(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.AutoExpandAllGroups = (global::System.Boolean)Value;
         }
-        private object get_28_GridControl_AllowLiveDataShaping(object instance)
+        private object get_27_GridControl_AllowLiveDataShaping(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.AllowLiveDataShaping;
         }
-        private void set_28_GridControl_AllowLiveDataShaping(object instance, object Value)
+        private void set_27_GridControl_AllowLiveDataShaping(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             that.AllowLiveDataShaping = (global::System.Boolean)Value;
         }
-        private object get_29_GridControl_IsGrouped(object instance)
+        private object get_28_GridControl_IsGrouped(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.IsGrouped;
         }
-        private object get_30_GridControl_ActualGroupCount(object instance)
+        private object get_29_GridControl_ActualGroupCount(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.ActualGroupCount;
         }
-        private object get_31_GridControl_GroupSummary(object instance)
+        private object get_30_GridControl_GroupSummary(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.GroupSummary;
         }
-        private object get_32_SummaryItemBase_SummaryType(object instance)
+        private object get_31_SummaryItemBase_SummaryType(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             return that.SummaryType;
         }
-        private void set_32_SummaryItemBase_SummaryType(object instance, object Value)
+        private void set_31_SummaryItemBase_SummaryType(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             that.SummaryType = (global::DevExpress.Data.SummaryItemType)Value;
         }
-        private object get_33_SummaryItemBase_Tag(object instance)
+        private object get_32_SummaryItemBase_Tag(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             return that.Tag;
         }
-        private void set_33_SummaryItemBase_Tag(object instance, object Value)
+        private void set_32_SummaryItemBase_Tag(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             that.Tag = (global::System.Object)Value;
         }
-        private object get_34_SummaryItemBase_FieldName(object instance)
+        private object get_33_SummaryItemBase_FieldName(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             return that.FieldName;
         }
-        private void set_34_SummaryItemBase_FieldName(object instance, object Value)
+        private void set_33_SummaryItemBase_FieldName(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             that.FieldName = (global::System.String)Value;
         }
-        private object get_35_SummaryItemBase_DisplayFormat(object instance)
+        private object get_34_SummaryItemBase_DisplayFormat(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             return that.DisplayFormat;
         }
-        private void set_35_SummaryItemBase_DisplayFormat(object instance, object Value)
+        private void set_34_SummaryItemBase_DisplayFormat(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             that.DisplayFormat = (global::System.String)Value;
         }
-        private object get_36_SummaryItemBase_ShowInColumn(object instance)
+        private object get_35_SummaryItemBase_ShowInColumn(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             return that.ShowInColumn;
         }
-        private void set_36_SummaryItemBase_ShowInColumn(object instance, object Value)
+        private void set_35_SummaryItemBase_ShowInColumn(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             that.ShowInColumn = (global::System.String)Value;
         }
-        private object get_37_SummaryItemBase_Visible(object instance)
+        private object get_36_SummaryItemBase_Visible(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             return that.Visible;
         }
-        private void set_37_SummaryItemBase_Visible(object instance, object Value)
+        private void set_36_SummaryItemBase_Visible(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             that.Visible = (global::System.Boolean)Value;
         }
-        private object get_38_SummaryItemBase_Alignment(object instance)
+        private object get_37_SummaryItemBase_Alignment(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             return that.Alignment;
         }
-        private void set_38_SummaryItemBase_Alignment(object instance, object Value)
+        private void set_37_SummaryItemBase_Alignment(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             that.Alignment = (global::DevExpress.UI.Xaml.Grid.GridSummaryItemAlignment)Value;
         }
-        private object get_39_SummaryItemBase_Caption(object instance)
+        private object get_38_SummaryItemBase_Caption(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             return that.Caption;
         }
-        private void set_39_SummaryItemBase_Caption(object instance, object Value)
+        private void set_38_SummaryItemBase_Caption(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             that.Caption = (global::System.String)Value;
         }
-        private object get_40_SummaryItemBase_FixedTotalSummaryItemTemplate(object instance)
+        private object get_39_SummaryItemBase_FixedTotalSummaryItemTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             return that.FixedTotalSummaryItemTemplate;
         }
-        private void set_40_SummaryItemBase_FixedTotalSummaryItemTemplate(object instance, object Value)
+        private void set_39_SummaryItemBase_FixedTotalSummaryItemTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             that.FixedTotalSummaryItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_41_SummaryItemBase_IsLast(object instance)
+        private object get_40_SummaryItemBase_IsLast(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             return that.IsLast;
         }
-        private void set_41_SummaryItemBase_IsLast(object instance, object Value)
+        private void set_40_SummaryItemBase_IsLast(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.SummaryItemBase)instance;
             that.IsLast = (global::System.Boolean)Value;
         }
-        private object get_42_GridControl_Columns(object instance)
+        private object get_41_GridControl_Columns(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.Columns;
         }
-        private object get_43_GridColumnBase_IsGrouped(object instance)
+        private object get_42_GridColumnBase_IsGrouped(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             return that.IsGrouped;
         }
-        private object get_44_GridColumnBase_GroupInterval(object instance)
+        private object get_43_GridColumnBase_GroupInterval(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             return that.GroupInterval;
         }
-        private void set_44_GridColumnBase_GroupInterval(object instance, object Value)
+        private void set_43_GridColumnBase_GroupInterval(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             that.GroupInterval = (global::DevExpress.XtraGrid.ColumnGroupInterval)Value;
         }
-        private object get_45_GridColumnBase_GroupIndex(object instance)
+        private object get_44_GridColumnBase_GroupIndex(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             return that.GroupIndex;
         }
-        private void set_45_GridColumnBase_GroupIndex(object instance, object Value)
+        private void set_44_GridColumnBase_GroupIndex(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             that.GroupIndex = (global::System.Int32)Value;
         }
-        private object get_46_GridColumnBase_GroupValueTemplate(object instance)
+        private object get_45_GridColumnBase_GroupValueTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             return that.GroupValueTemplate;
         }
-        private void set_46_GridColumnBase_GroupValueTemplate(object instance, object Value)
+        private void set_45_GridColumnBase_GroupValueTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             that.GroupValueTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_47_GridColumnBase_GroupValueTemplateSelector(object instance)
+        private object get_46_GridColumnBase_GroupValueTemplateSelector(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             return that.GroupValueTemplateSelector;
         }
-        private void set_47_GridColumnBase_GroupValueTemplateSelector(object instance, object Value)
+        private void set_46_GridColumnBase_GroupValueTemplateSelector(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             that.GroupValueTemplateSelector = (global::Windows.UI.Xaml.Controls.DataTemplateSelector)Value;
         }
-        private object get_48_GridColumnBase_ActualGroupValueTemplateSelector(object instance)
+        private object get_47_GridColumnBase_ActualGroupValueTemplateSelector(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             return that.ActualGroupValueTemplateSelector;
         }
-        private object get_49_GridColumnBase_AllowGrouping(object instance)
+        private object get_48_GridColumnBase_AllowGrouping(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             return that.AllowGrouping;
         }
-        private void set_49_GridColumnBase_AllowGrouping(object instance, object Value)
+        private void set_48_GridColumnBase_AllowGrouping(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             that.AllowGrouping = (global::DevExpress.Utils.DefaultBoolean)Value;
         }
-        private object get_50_GridColumnBase_ActualAllowGrouping(object instance)
+        private object get_49_GridColumnBase_ActualAllowGrouping(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             return that.ActualAllowGrouping;
         }
-        private object get_51_GridColumnBase_GroupColumnSummaryItemTemplate(object instance)
+        private object get_50_GridColumnBase_GroupColumnSummaryItemTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             return that.GroupColumnSummaryItemTemplate;
         }
-        private void set_51_GridColumnBase_GroupColumnSummaryItemTemplate(object instance, object Value)
+        private void set_50_GridColumnBase_GroupColumnSummaryItemTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             that.GroupColumnSummaryItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_52_GridColumnBase_GroupColumnSummaryContentStyle(object instance)
+        private object get_51_GridColumnBase_GroupColumnSummaryContentStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             return that.GroupColumnSummaryContentStyle;
         }
-        private void set_52_GridColumnBase_GroupColumnSummaryContentStyle(object instance, object Value)
+        private void set_51_GridColumnBase_GroupColumnSummaryContentStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)instance;
             that.GroupColumnSummaryContentStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_53_ColumnBase_DataControl(object instance)
+        private object get_52_ColumnBase_DataControl(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.DataControl;
         }
-        private object get_54_ColumnBase_HorizontalHeaderContentAlignment(object instance)
+        private object get_53_ColumnBase_HorizontalHeaderContentAlignment(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.HorizontalHeaderContentAlignment;
         }
-        private void set_54_ColumnBase_HorizontalHeaderContentAlignment(object instance, object Value)
+        private void set_53_ColumnBase_HorizontalHeaderContentAlignment(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.HorizontalHeaderContentAlignment = (global::Windows.UI.Xaml.HorizontalAlignment)Value;
         }
-        private object get_55_ColumnBase_IsSorted(object instance)
+        private object get_54_ColumnBase_IsSorted(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.IsSorted;
         }
-        private object get_56_ColumnBase_IsSortedBySummary(object instance)
+        private object get_55_ColumnBase_IsSortedBySummary(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.IsSortedBySummary;
         }
-        private object get_57_ColumnBase_SortOrder(object instance)
+        private object get_56_ColumnBase_SortOrder(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.SortOrder;
         }
-        private void set_57_ColumnBase_SortOrder(object instance, object Value)
+        private void set_56_ColumnBase_SortOrder(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.SortOrder = (global::DevExpress.Data.ColumnSortOrder)Value;
         }
-        private object get_58_ColumnBase_SortIndex(object instance)
+        private object get_57_ColumnBase_SortIndex(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.SortIndex;
         }
-        private void set_58_ColumnBase_SortIndex(object instance, object Value)
+        private void set_57_ColumnBase_SortIndex(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.SortIndex = (global::System.Int32)Value;
         }
-        private object get_59_ColumnBase_FieldName(object instance)
+        private object get_58_ColumnBase_FieldName(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.FieldName;
         }
-        private void set_59_ColumnBase_FieldName(object instance, object Value)
+        private void set_58_ColumnBase_FieldName(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.FieldName = (global::System.String)Value;
         }
-        private object get_60_ColumnBase_FieldType(object instance)
+        private object get_59_ColumnBase_FieldType(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.FieldType;
         }
-        private object get_61_ColumnBase_UnboundType(object instance)
+        private object get_60_ColumnBase_UnboundType(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.UnboundType;
         }
-        private void set_61_ColumnBase_UnboundType(object instance, object Value)
+        private void set_60_ColumnBase_UnboundType(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.UnboundType = (global::DevExpress.Data.UnboundColumnType)Value;
         }
-        private object get_62_ColumnBase_UnboundExpression(object instance)
+        private object get_61_ColumnBase_UnboundExpression(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.UnboundExpression;
         }
-        private void set_62_ColumnBase_UnboundExpression(object instance, object Value)
+        private void set_61_ColumnBase_UnboundExpression(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.UnboundExpression = (global::System.String)Value;
         }
-        private object get_63_ColumnBase_AllowEditing(object instance)
+        private object get_62_ColumnBase_AllowEditing(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.AllowEditing;
         }
-        private void set_63_ColumnBase_AllowEditing(object instance, object Value)
+        private void set_62_ColumnBase_AllowEditing(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.AllowEditing = (global::DevExpress.Utils.DefaultBoolean)Value;
         }
-        private object get_64_ColumnBase_TotalSummaryContentStyle(object instance)
+        private object get_63_ColumnBase_TotalSummaryContentStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.TotalSummaryContentStyle;
         }
-        private void set_64_ColumnBase_TotalSummaryContentStyle(object instance, object Value)
+        private void set_63_ColumnBase_TotalSummaryContentStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.TotalSummaryContentStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_65_ColumnBase_ActualTotalSummaryContentStyle(object instance)
+        private object get_64_ColumnBase_ActualTotalSummaryContentStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ActualTotalSummaryContentStyle;
         }
-        private object get_66_ColumnBase_SortMode(object instance)
+        private object get_65_ColumnBase_SortMode(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.SortMode;
         }
-        private void set_66_ColumnBase_SortMode(object instance, object Value)
+        private void set_65_ColumnBase_SortMode(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.SortMode = (global::DevExpress.XtraGrid.ColumnSortMode)Value;
         }
-        private object get_67_ColumnBase_CellStyle(object instance)
+        private object get_66_ColumnBase_CellStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.CellStyle;
         }
-        private void set_67_ColumnBase_CellStyle(object instance, object Value)
+        private void set_66_ColumnBase_CellStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.CellStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_68_ColumnBase_HeaderStyle(object instance)
+        private object get_67_ColumnBase_HeaderStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.HeaderStyle;
         }
-        private void set_68_ColumnBase_HeaderStyle(object instance, object Value)
+        private void set_67_ColumnBase_HeaderStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.HeaderStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_69_ColumnBase_ActualCellStyle(object instance)
+        private object get_68_ColumnBase_ActualCellStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ActualCellStyle;
         }
-        private object get_70_ColumnBase_ActualHeaderStyle(object instance)
+        private object get_69_ColumnBase_ActualHeaderStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ActualHeaderStyle;
         }
-        private object get_71_ColumnBase_ActualAllowColumnFiltering(object instance)
+        private object get_70_ColumnBase_ActualAllowColumnFiltering(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ActualAllowColumnFiltering;
         }
-        private object get_72_ColumnBase_HasRightSibling(object instance)
+        private object get_71_ColumnBase_HasRightSibling(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.HasRightSibling;
         }
-        private void set_72_ColumnBase_HasRightSibling(object instance, object Value)
+        private void set_71_ColumnBase_HasRightSibling(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.HasRightSibling = (global::System.Boolean)Value;
         }
-        private object get_73_ColumnBase_HasLeftSibling(object instance)
+        private object get_72_ColumnBase_HasLeftSibling(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.HasLeftSibling;
         }
-        private void set_73_ColumnBase_HasLeftSibling(object instance, object Value)
+        private void set_72_ColumnBase_HasLeftSibling(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.HasLeftSibling = (global::System.Boolean)Value;
         }
-        private object get_74_ColumnBase_VisibleIndex(object instance)
+        private object get_73_ColumnBase_VisibleIndex(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.VisibleIndex;
         }
-        private void set_74_ColumnBase_VisibleIndex(object instance, object Value)
+        private void set_73_ColumnBase_VisibleIndex(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.VisibleIndex = (global::System.Int32)Value;
         }
-        private object get_75_ColumnBase_IsLast(object instance)
+        private object get_74_ColumnBase_IsLast(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.IsLast;
         }
-        private object get_76_ColumnBase_IsFirst(object instance)
+        private object get_75_ColumnBase_IsFirst(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.IsFirst;
         }
-        private object get_77_ColumnBase_Name(object instance)
+        private object get_76_ColumnBase_Name(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.Name;
         }
-        private void set_77_ColumnBase_Name(object instance, object Value)
+        private void set_76_ColumnBase_Name(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_78_ColumnBase_Tag(object instance)
+        private object get_77_ColumnBase_Tag(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.Tag;
         }
-        private void set_78_ColumnBase_Tag(object instance, object Value)
+        private void set_77_ColumnBase_Tag(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.Tag = (global::System.Object)Value;
         }
-        private object get_79_ColumnBase_Commands(object instance)
+        private object get_78_ColumnBase_Commands(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.Commands;
         }
-        private object get_80_ColumnBase_Header(object instance)
+        private object get_79_ColumnBase_Header(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.Header;
         }
-        private void set_80_ColumnBase_Header(object instance, object Value)
+        private void set_79_ColumnBase_Header(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.Header = (global::System.Object)Value;
         }
-        private object get_81_ColumnBase_HeaderCaption(object instance)
+        private object get_80_ColumnBase_HeaderCaption(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.HeaderCaption;
         }
-        private object get_82_ColumnBase_ActualHeaderWidth(object instance)
+        private object get_81_ColumnBase_ActualHeaderWidth(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ActualHeaderWidth;
         }
-        private object get_83_ColumnBase_ActualDataWidth(object instance)
+        private object get_82_ColumnBase_ActualDataWidth(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ActualDataWidth;
         }
-        private object get_84_ColumnBase_Width(object instance)
+        private object get_83_ColumnBase_Width(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.Width;
         }
-        private void set_84_ColumnBase_Width(object instance, object Value)
+        private void set_83_ColumnBase_Width(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.Width = (global::System.Double)Value;
         }
-        private object get_85_ColumnBase_MinWidth(object instance)
+        private object get_84_ColumnBase_MinWidth(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.MinWidth;
         }
-        private void set_85_ColumnBase_MinWidth(object instance, object Value)
+        private void set_84_ColumnBase_MinWidth(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.MinWidth = (global::System.Double)Value;
         }
-        private object get_86_ColumnBase_ActualWidth(object instance)
+        private object get_85_ColumnBase_ActualWidth(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ActualWidth;
         }
-        private object get_87_ColumnBase_FixedWidth(object instance)
+        private object get_86_ColumnBase_FixedWidth(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.FixedWidth;
         }
-        private void set_87_ColumnBase_FixedWidth(object instance, object Value)
+        private void set_86_ColumnBase_FixedWidth(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.FixedWidth = (global::System.Boolean)Value;
         }
-        private object get_88_ColumnBase_Visible(object instance)
+        private object get_87_ColumnBase_Visible(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.Visible;
         }
-        private void set_88_ColumnBase_Visible(object instance, object Value)
+        private void set_87_ColumnBase_Visible(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.Visible = (global::System.Boolean)Value;
         }
-        private object get_89_ColumnBase_AllowSorting(object instance)
+        private object get_88_ColumnBase_AllowSorting(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.AllowSorting;
         }
-        private void set_89_ColumnBase_AllowSorting(object instance, object Value)
+        private void set_88_ColumnBase_AllowSorting(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.AllowSorting = (global::DevExpress.Utils.DefaultBoolean)Value;
         }
-        private object get_90_ColumnBase_ActualAllowSorting(object instance)
+        private object get_89_ColumnBase_ActualAllowSorting(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ActualAllowSorting;
         }
-        private object get_91_ColumnBase_AllowMoving(object instance)
+        private object get_90_ColumnBase_AllowMoving(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.AllowMoving;
         }
-        private void set_91_ColumnBase_AllowMoving(object instance, object Value)
+        private void set_90_ColumnBase_AllowMoving(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.AllowMoving = (global::DevExpress.Utils.DefaultBoolean)Value;
         }
-        private object get_92_ColumnBase_ActualAllowMoving(object instance)
+        private object get_91_ColumnBase_ActualAllowMoving(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ActualAllowMoving;
         }
-        private object get_93_ColumnBase_ColumnPosition(object instance)
+        private object get_92_ColumnBase_ColumnPosition(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ColumnPosition;
         }
-        private void set_93_ColumnBase_ColumnPosition(object instance, object Value)
+        private void set_92_ColumnBase_ColumnPosition(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.ColumnPosition = (global::DevExpress.UI.Xaml.Grid.ColumnPosition)Value;
         }
-        private object get_94_ColumnBase_HeaderTemplate(object instance)
+        private object get_93_ColumnBase_HeaderTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.HeaderTemplate;
         }
-        private void set_94_ColumnBase_HeaderTemplate(object instance, object Value)
+        private void set_93_ColumnBase_HeaderTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.HeaderTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_95_ColumnBase_HeaderTemplateSelector(object instance)
+        private object get_94_ColumnBase_HeaderTemplateSelector(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.HeaderTemplateSelector;
         }
-        private void set_95_ColumnBase_HeaderTemplateSelector(object instance, object Value)
+        private void set_94_ColumnBase_HeaderTemplateSelector(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.HeaderTemplateSelector = (global::Windows.UI.Xaml.Controls.DataTemplateSelector)Value;
         }
-        private object get_96_ColumnBase_ActualHeaderTemplateSelector(object instance)
+        private object get_95_ColumnBase_ActualHeaderTemplateSelector(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ActualHeaderTemplateSelector;
         }
-        private object get_97_ColumnBase_HasTotalSummaries(object instance)
+        private object get_96_ColumnBase_HasTotalSummaries(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.HasTotalSummaries;
         }
-        private object get_98_ColumnBase_TotalSummaryText(object instance)
+        private object get_97_ColumnBase_TotalSummaryText(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.TotalSummaryText;
         }
-        private object get_99_ColumnBase_AllowColumnFiltering(object instance)
+        private object get_98_ColumnBase_AllowColumnFiltering(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.AllowColumnFiltering;
         }
-        private void set_99_ColumnBase_AllowColumnFiltering(object instance, object Value)
+        private void set_98_ColumnBase_AllowColumnFiltering(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.AllowColumnFiltering = (global::DevExpress.Utils.DefaultBoolean)Value;
         }
-        private object get_100_ColumnBase_FilterPopupMode(object instance)
+        private object get_99_ColumnBase_FilterPopupMode(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.FilterPopupMode;
         }
-        private void set_100_ColumnBase_FilterPopupMode(object instance, object Value)
+        private void set_99_ColumnBase_FilterPopupMode(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.FilterPopupMode = (global::DevExpress.UI.Xaml.Grid.FilterPopupMode)Value;
         }
-        private object get_101_ColumnBase_ImmediateUpdateColumnFilter(object instance)
+        private object get_100_ColumnBase_ImmediateUpdateColumnFilter(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.ImmediateUpdateColumnFilter;
         }
-        private void set_101_ColumnBase_ImmediateUpdateColumnFilter(object instance, object Value)
+        private void set_100_ColumnBase_ImmediateUpdateColumnFilter(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.ImmediateUpdateColumnFilter = (global::System.Boolean)Value;
         }
-        private object get_102_ColumnBase_CustomColumnFilterPopupTemplate(object instance)
+        private object get_101_ColumnBase_CustomColumnFilterPopupTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             return that.CustomColumnFilterPopupTemplate;
         }
-        private void set_102_ColumnBase_CustomColumnFilterPopupTemplate(object instance, object Value)
+        private void set_101_ColumnBase_CustomColumnFilterPopupTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.ColumnBase)instance;
             that.CustomColumnFilterPopupTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_103_ColumnBase_HeaderPresenterType(object instance)
+        private object get_102_ColumnBase_HeaderPresenterType(object instance)
         {
             return global::DevExpress.UI.Xaml.Grid.ColumnBase.GetHeaderPresenterType((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_103_ColumnBase_HeaderPresenterType(object instance, object Value)
+        private void set_102_ColumnBase_HeaderPresenterType(object instance, object Value)
         {
             global::DevExpress.UI.Xaml.Grid.ColumnBase.SetHeaderPresenterType((global::Windows.UI.Xaml.DependencyObject)instance, (global::DevExpress.UI.Xaml.Grid.HeaderPresenterType)Value);
         }
-        private object get_104_GridControl_TotalSummary(object instance)
+        private object get_103_GridControl_TotalSummary(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControl)instance;
             return that.TotalSummary;
         }
-        private object get_105_GridControlBase_CurrentColumn(object instance)
+        private object get_104_GridControlBase_CurrentColumn(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             return that.CurrentColumn;
         }
-        private void set_105_GridControlBase_CurrentColumn(object instance, object Value)
+        private void set_104_GridControlBase_CurrentColumn(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             that.CurrentColumn = (global::DevExpress.UI.Xaml.Grid.GridColumnBase)Value;
         }
-        private object get_106_GridControlBase_AllowGrouping(object instance)
+        private object get_105_GridControlBase_AllowGrouping(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             return that.AllowGrouping;
         }
-        private void set_106_GridControlBase_AllowGrouping(object instance, object Value)
+        private void set_105_GridControlBase_AllowGrouping(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             that.AllowGrouping = (global::System.Boolean)Value;
         }
-        private object get_107_GridControlBase_VisibleColumns(object instance)
+        private object get_106_GridControlBase_VisibleColumns(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             return that.VisibleColumns;
         }
-        private object get_108_GridControlBase_ShowGroupPanel(object instance)
+        private object get_107_GridControlBase_ShowGroupPanel(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             return that.ShowGroupPanel;
         }
-        private void set_108_GridControlBase_ShowGroupPanel(object instance, object Value)
+        private void set_107_GridControlBase_ShowGroupPanel(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             that.ShowGroupPanel = (global::DevExpress.Utils.DefaultBoolean)Value;
         }
-        private object get_109_GridControlBase_ShowGroupedColumns(object instance)
+        private object get_108_GridControlBase_ShowGroupedColumns(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             return that.ShowGroupedColumns;
         }
-        private void set_109_GridControlBase_ShowGroupedColumns(object instance, object Value)
+        private void set_108_GridControlBase_ShowGroupedColumns(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             that.ShowGroupedColumns = (global::System.Boolean)Value;
         }
-        private object get_110_GridControlBase_GroupSummaryContentStyle(object instance)
+        private object get_109_GridControlBase_GroupSummaryContentStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             return that.GroupSummaryContentStyle;
         }
-        private void set_110_GridControlBase_GroupSummaryContentStyle(object instance, object Value)
+        private void set_109_GridControlBase_GroupSummaryContentStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             that.GroupSummaryContentStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_111_GridControlBase_GroupSummaryItemTemplate(object instance)
+        private object get_110_GridControlBase_GroupSummaryItemTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             return that.GroupSummaryItemTemplate;
         }
-        private void set_111_GridControlBase_GroupSummaryItemTemplate(object instance, object Value)
+        private void set_110_GridControlBase_GroupSummaryItemTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             that.GroupSummaryItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_112_GridControlBase_GroupValueTemplate(object instance)
+        private object get_111_GridControlBase_GroupValueTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             return that.GroupValueTemplate;
         }
-        private void set_112_GridControlBase_GroupValueTemplate(object instance, object Value)
+        private void set_111_GridControlBase_GroupValueTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             that.GroupValueTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_113_GridControlBase_GroupValueTemplateSelector(object instance)
+        private object get_112_GridControlBase_GroupValueTemplateSelector(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             return that.GroupValueTemplateSelector;
         }
-        private void set_113_GridControlBase_GroupValueTemplateSelector(object instance, object Value)
+        private void set_112_GridControlBase_GroupValueTemplateSelector(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridControlBase)instance;
             that.GroupValueTemplateSelector = (global::Windows.UI.Xaml.Controls.DataTemplateSelector)Value;
         }
-        private object get_114_DataControlBase_VirtualizingCacheHeight(object instance)
+        private object get_113_DataControlBase_VirtualizingCacheHeight(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.VirtualizingCacheHeight;
         }
-        private void set_114_DataControlBase_VirtualizingCacheHeight(object instance, object Value)
+        private void set_113_DataControlBase_VirtualizingCacheHeight(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.VirtualizingCacheHeight = (global::System.Double)Value;
         }
-        private object get_115_DataControlBase_VirtualizingCacheWidth(object instance)
+        private object get_114_DataControlBase_VirtualizingCacheWidth(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.VirtualizingCacheWidth;
         }
-        private void set_115_DataControlBase_VirtualizingCacheWidth(object instance, object Value)
+        private void set_114_DataControlBase_VirtualizingCacheWidth(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.VirtualizingCacheWidth = (global::System.Double)Value;
         }
-        private object get_116_DataControlBase_VisibleRowCount(object instance)
+        private object get_115_DataControlBase_VisibleRowCount(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.VisibleRowCount;
         }
-        private object get_117_DataControlBase_ActiveEditor(object instance)
+        private object get_116_DataControlBase_ActiveEditor(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ActiveEditor;
         }
-        private object get_118_DataControlBase_ShowFilterPanelMode(object instance)
+        private object get_117_DataControlBase_ShowFilterPanelMode(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ShowFilterPanelMode;
         }
-        private void set_118_DataControlBase_ShowFilterPanelMode(object instance, object Value)
+        private void set_117_DataControlBase_ShowFilterPanelMode(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ShowFilterPanelMode = (global::DevExpress.UI.Xaml.Grid.ShowFilterPanelMode)Value;
         }
-        private object get_119_DataControlBase_ActualShowFilterPanel(object instance)
+        private object get_118_DataControlBase_ActualShowFilterPanel(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ActualShowFilterPanel;
         }
-        private object get_120_DataControlBase_FilterPanelText(object instance)
+        private object get_119_DataControlBase_FilterPanelText(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.FilterPanelText;
         }
-        private object get_121_DataControlBase_AllowEditing(object instance)
+        private object get_120_DataControlBase_AllowEditing(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.AllowEditing;
         }
-        private void set_121_DataControlBase_AllowEditing(object instance, object Value)
+        private void set_120_DataControlBase_AllowEditing(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.AllowEditing = (global::System.Boolean)Value;
         }
-        private object get_122_DataControlBase_AllowColumnMoving(object instance)
+        private object get_121_DataControlBase_AllowColumnMoving(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.AllowColumnMoving;
         }
-        private void set_122_DataControlBase_AllowColumnMoving(object instance, object Value)
+        private void set_121_DataControlBase_AllowColumnMoving(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.AllowColumnMoving = (global::System.Boolean)Value;
         }
-        private object get_123_DataControlBase_AllowColumnFiltering(object instance)
+        private object get_122_DataControlBase_AllowColumnFiltering(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.AllowColumnFiltering;
         }
-        private void set_123_DataControlBase_AllowColumnFiltering(object instance, object Value)
+        private void set_122_DataControlBase_AllowColumnFiltering(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.AllowColumnFiltering = (global::System.Boolean)Value;
         }
-        private object get_124_DataControlBase_IsFilterEnabled(object instance)
+        private object get_123_DataControlBase_IsFilterEnabled(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.IsFilterEnabled;
         }
-        private void set_124_DataControlBase_IsFilterEnabled(object instance, object Value)
+        private void set_123_DataControlBase_IsFilterEnabled(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.IsFilterEnabled = (global::System.Boolean)Value;
         }
-        private object get_125_DataControlBase_FilterCriteria(object instance)
+        private object get_124_DataControlBase_FilterCriteria(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.FilterCriteria;
         }
-        private void set_125_DataControlBase_FilterCriteria(object instance, object Value)
+        private void set_124_DataControlBase_FilterCriteria(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.FilterCriteria = (global::DevExpress.Data.Filtering.CriteriaOperator)Value;
         }
-        private object get_126_DataControlBase_FilterString(object instance)
+        private object get_125_DataControlBase_FilterString(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.FilterString;
         }
-        private void set_126_DataControlBase_FilterString(object instance, object Value)
+        private void set_125_DataControlBase_FilterString(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.FilterString = (global::System.String)Value;
         }
-        private object get_127_DataControlBase_FixedTotalSummaryItemTemplate(object instance)
+        private object get_126_DataControlBase_FixedTotalSummaryItemTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.FixedTotalSummaryItemTemplate;
         }
-        private void set_127_DataControlBase_FixedTotalSummaryItemTemplate(object instance, object Value)
+        private void set_126_DataControlBase_FixedTotalSummaryItemTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.FixedTotalSummaryItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_128_DataControlBase_AllowSorting(object instance)
+        private object get_127_DataControlBase_AllowSorting(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.AllowSorting;
         }
-        private void set_128_DataControlBase_AllowSorting(object instance, object Value)
+        private void set_127_DataControlBase_AllowSorting(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.AllowSorting = (global::System.Boolean)Value;
         }
-        private object get_129_DataControlBase_SelectedItemHandle(object instance)
+        private object get_128_DataControlBase_SelectedItemHandle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.SelectedItemHandle;
         }
-        private void set_129_DataControlBase_SelectedItemHandle(object instance, object Value)
+        private void set_128_DataControlBase_SelectedItemHandle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.SelectedItemHandle = (global::System.Int32)Value;
         }
-        private object get_130_DataControlBase_NavigationStyle(object instance)
+        private object get_129_DataControlBase_NavigationStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.NavigationStyle;
         }
-        private void set_130_DataControlBase_NavigationStyle(object instance, object Value)
+        private void set_129_DataControlBase_NavigationStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.NavigationStyle = (global::DevExpress.UI.Xaml.Grid.GridControlNavigationStyle)Value;
         }
-        private object get_131_DataControlBase_SelectedItem(object instance)
+        private object get_130_DataControlBase_SelectedItem(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.SelectedItem;
         }
-        private void set_131_DataControlBase_SelectedItem(object instance, object Value)
+        private void set_130_DataControlBase_SelectedItem(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.SelectedItem = (global::System.Object)Value;
         }
-        private object get_132_DataControlBase_CurrentItem(object instance)
+        private object get_131_DataControlBase_CurrentItem(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.CurrentItem;
         }
-        private void set_132_DataControlBase_CurrentItem(object instance, object Value)
+        private void set_131_DataControlBase_CurrentItem(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.CurrentItem = (global::System.Object)Value;
         }
-        private object get_133_DataControlBase_KeepFocusedRowOnUpdate(object instance)
+        private object get_132_DataControlBase_KeepFocusedRowOnUpdate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.KeepFocusedRowOnUpdate;
         }
-        private void set_133_DataControlBase_KeepFocusedRowOnUpdate(object instance, object Value)
+        private void set_132_DataControlBase_KeepFocusedRowOnUpdate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.KeepFocusedRowOnUpdate = (global::System.Boolean)Value;
         }
-        private object get_134_DataControlBase_IsSynchronizedWithCurrentItem(object instance)
+        private object get_133_DataControlBase_IsSynchronizedWithCurrentItem(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.IsSynchronizedWithCurrentItem;
         }
-        private void set_134_DataControlBase_IsSynchronizedWithCurrentItem(object instance, object Value)
+        private void set_133_DataControlBase_IsSynchronizedWithCurrentItem(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.IsSynchronizedWithCurrentItem = (global::System.Boolean)Value;
         }
-        private object get_135_DataControlBase_FocusedBorderTemplate(object instance)
+        private object get_134_DataControlBase_FocusedBorderTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.FocusedBorderTemplate;
         }
-        private void set_135_DataControlBase_FocusedBorderTemplate(object instance, object Value)
+        private void set_134_DataControlBase_FocusedBorderTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.FocusedBorderTemplate = (global::Windows.UI.Xaml.Controls.ControlTemplate)Value;
         }
-        private object get_136_DataControlBase_AutoScrollOnSorting(object instance)
+        private object get_135_DataControlBase_AutoScrollOnSorting(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.AutoScrollOnSorting;
         }
-        private void set_136_DataControlBase_AutoScrollOnSorting(object instance, object Value)
+        private void set_135_DataControlBase_AutoScrollOnSorting(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.AutoScrollOnSorting = (global::System.Boolean)Value;
         }
-        private object get_137_DataControlBase_ShowTotalSummary(object instance)
+        private object get_136_DataControlBase_ShowTotalSummary(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ShowTotalSummary;
         }
-        private void set_137_DataControlBase_ShowTotalSummary(object instance, object Value)
+        private void set_136_DataControlBase_ShowTotalSummary(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ShowTotalSummary = (global::System.Boolean)Value;
         }
-        private object get_138_DataControlBase_ShowColumnHeaders(object instance)
+        private object get_137_DataControlBase_ShowColumnHeaders(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ShowColumnHeaders;
         }
-        private void set_138_DataControlBase_ShowColumnHeaders(object instance, object Value)
+        private void set_137_DataControlBase_ShowColumnHeaders(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ShowColumnHeaders = (global::System.Boolean)Value;
         }
-        private object get_139_DataControlBase_TotalSummaryContentStyle(object instance)
+        private object get_138_DataControlBase_TotalSummaryContentStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.TotalSummaryContentStyle;
         }
-        private void set_139_DataControlBase_TotalSummaryContentStyle(object instance, object Value)
+        private void set_138_DataControlBase_TotalSummaryContentStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.TotalSummaryContentStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_140_DataControlBase_ColumnHeaderStyle(object instance)
+        private object get_139_DataControlBase_ColumnHeaderStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ColumnHeaderStyle;
         }
-        private void set_140_DataControlBase_ColumnHeaderStyle(object instance, object Value)
+        private void set_139_DataControlBase_ColumnHeaderStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ColumnHeaderStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_141_DataControlBase_CellStyle(object instance)
+        private object get_140_DataControlBase_CellStyle(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.CellStyle;
         }
-        private void set_141_DataControlBase_CellStyle(object instance, object Value)
+        private void set_140_DataControlBase_CellStyle(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.CellStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_142_DataControlBase_TotalSummaryItemTemplate(object instance)
+        private object get_141_DataControlBase_TotalSummaryItemTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.TotalSummaryItemTemplate;
         }
-        private void set_142_DataControlBase_TotalSummaryItemTemplate(object instance, object Value)
+        private void set_141_DataControlBase_TotalSummaryItemTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.TotalSummaryItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_143_DataControlBase_ColumnHeaderTemplate(object instance)
+        private object get_142_DataControlBase_ColumnHeaderTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ColumnHeaderTemplate;
         }
-        private void set_143_DataControlBase_ColumnHeaderTemplate(object instance, object Value)
+        private void set_142_DataControlBase_ColumnHeaderTemplate(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ColumnHeaderTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_144_DataControlBase_ColumnHeaderTemplateSelector(object instance)
+        private object get_143_DataControlBase_ColumnHeaderTemplateSelector(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ColumnHeaderTemplateSelector;
         }
-        private void set_144_DataControlBase_ColumnHeaderTemplateSelector(object instance, object Value)
+        private void set_143_DataControlBase_ColumnHeaderTemplateSelector(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ColumnHeaderTemplateSelector = (global::Windows.UI.Xaml.Controls.DataTemplateSelector)Value;
         }
-        private object get_145_DataControlBase_Commands(object instance)
+        private object get_144_DataControlBase_Commands(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.Commands;
         }
-        private object get_146_DataControlBase_SummariesIgnoreNullValues(object instance)
+        private object get_145_DataControlBase_SummariesIgnoreNullValues(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.SummariesIgnoreNullValues;
         }
-        private void set_146_DataControlBase_SummariesIgnoreNullValues(object instance, object Value)
+        private void set_145_DataControlBase_SummariesIgnoreNullValues(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.SummariesIgnoreNullValues = (global::System.Boolean)Value;
         }
-        private object get_147_DataControlBase_ShowFixedTotalSummary(object instance)
+        private object get_146_DataControlBase_ShowFixedTotalSummary(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ShowFixedTotalSummary;
         }
-        private void set_147_DataControlBase_ShowFixedTotalSummary(object instance, object Value)
+        private void set_146_DataControlBase_ShowFixedTotalSummary(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ShowFixedTotalSummary = (global::System.Boolean)Value;
         }
-        private object get_148_DataControlBase_PreserveSorting(object instance)
+        private object get_147_DataControlBase_PreserveSorting(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.PreserveSorting;
         }
-        private void set_148_DataControlBase_PreserveSorting(object instance, object Value)
+        private void set_147_DataControlBase_PreserveSorting(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.PreserveSorting = (global::System.Boolean)Value;
         }
-        private object get_149_DataControlBase_SelectionMode(object instance)
+        private object get_148_DataControlBase_SelectionMode(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.SelectionMode;
         }
-        private void set_149_DataControlBase_SelectionMode(object instance, object Value)
+        private void set_148_DataControlBase_SelectionMode(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.SelectionMode = (global::DevExpress.UI.Xaml.Grid.MultiSelectMode)Value;
         }
-        private object get_150_DataControlBase_SelectedItems(object instance)
+        private object get_149_DataControlBase_SelectedItems(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.SelectedItems;
         }
-        private void set_150_DataControlBase_SelectedItems(object instance, object Value)
+        private void set_149_DataControlBase_SelectedItems(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.SelectedItems = (global::System.Collections.IList)Value;
         }
-        private object get_151_DataControlBase_ItemNavigationTargetType(object instance)
+        private object get_150_DataControlBase_ItemNavigationTargetType(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ItemNavigationTargetType;
         }
-        private void set_151_DataControlBase_ItemNavigationTargetType(object instance, object Value)
+        private void set_150_DataControlBase_ItemNavigationTargetType(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ItemNavigationTargetType = (global::System.String)Value;
         }
-        private object get_152_DataControlBase_ItemNavigationMode(object instance)
+        private object get_151_DataControlBase_ItemNavigationMode(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ItemNavigationMode;
         }
-        private void set_152_DataControlBase_ItemNavigationMode(object instance, object Value)
+        private void set_151_DataControlBase_ItemNavigationMode(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ItemNavigationMode = (global::DevExpress.UI.Xaml.Grid.ItemNavigationMode)Value;
         }
-        private object get_153_DataControlBase_ItemClickCommand(object instance)
+        private object get_152_DataControlBase_ItemClickCommand(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ItemClickCommand;
         }
-        private void set_153_DataControlBase_ItemClickCommand(object instance, object Value)
+        private void set_152_DataControlBase_ItemClickCommand(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ItemClickCommand = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_154_DataControlBase_ItemNavigationTargetParameterBinding(object instance)
+        private object get_153_DataControlBase_ItemNavigationTargetParameterBinding(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.ItemNavigationTargetParameterBinding;
         }
-        private void set_154_DataControlBase_ItemNavigationTargetParameterBinding(object instance, object Value)
+        private void set_153_DataControlBase_ItemNavigationTargetParameterBinding(object instance, object Value)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             that.ItemNavigationTargetParameterBinding = (global::Windows.UI.Xaml.Data.BindingBase)Value;
         }
-        private object get_155_DataControlBase_FixedSummariesLeft(object instance)
+        private object get_154_DataControlBase_FixedSummariesLeft(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.FixedSummariesLeft;
         }
-        private object get_156_GridTotalSummaryData_Item(object instance)
+        private object get_155_GridTotalSummaryData_Item(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridTotalSummaryData)instance;
             return that.Item;
         }
-        private object get_157_GridTotalSummaryData_Value(object instance)
+        private object get_156_GridTotalSummaryData_Value(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridTotalSummaryData)instance;
             return that.Value;
         }
-        private object get_158_GridTotalSummaryData_DisplayValue(object instance)
+        private object get_157_GridTotalSummaryData_DisplayValue(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridTotalSummaryData)instance;
             return that.DisplayValue;
         }
-        private object get_159_GridTotalSummaryData_Caption(object instance)
+        private object get_158_GridTotalSummaryData_Caption(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridTotalSummaryData)instance;
             return that.Caption;
         }
-        private object get_160_GridTotalSummaryData_Column(object instance)
+        private object get_159_GridTotalSummaryData_Column(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridTotalSummaryData)instance;
             return that.Column;
         }
-        private object get_161_GridTotalSummaryData_FixedTotalSummaryItemTemplate(object instance)
+        private object get_160_GridTotalSummaryData_FixedTotalSummaryItemTemplate(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridTotalSummaryData)instance;
             return that.FixedTotalSummaryItemTemplate;
         }
-        private object get_162_GridTotalSummaryData_DataControl(object instance)
+        private object get_161_GridTotalSummaryData_DataControl(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.GridTotalSummaryData)instance;
             return that.DataControl;
         }
-        private object get_163_DataControlBase_FixedSummariesRight(object instance)
+        private object get_162_DataControlBase_FixedSummariesRight(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.FixedSummariesRight;
         }
-        private object get_164_DataControlBase_HeadersData(object instance)
+        private object get_163_DataControlBase_HeadersData(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.HeadersData;
         }
-        private object get_165_DataControlBase_TotalSummaryData(object instance)
+        private object get_164_DataControlBase_TotalSummaryData(object instance)
         {
             var that = (global::DevExpress.UI.Xaml.Grid.DataControlBase)instance;
             return that.TotalSummaryData;
         }
-        private object get_166_DXControl_Focusable(object instance)
+        private object get_165_DXControl_Focusable(object instance)
         {
             var that = (global::DevExpress.Core.Native.DXControl)instance;
             return that.Focusable;
         }
-        private void set_166_DXControl_Focusable(object instance, object Value)
+        private void set_165_DXControl_Focusable(object instance, object Value)
         {
             var that = (global::DevExpress.Core.Native.DXControl)instance;
             that.Focusable = (global::System.Boolean)Value;
         }
-        private object get_167_DXControl_IsFocused(object instance)
+        private object get_166_DXControl_IsFocused(object instance)
         {
             var that = (global::DevExpress.Core.Native.DXControl)instance;
             return that.IsFocused;
         }
-        private object get_168_DXControl_IsKeyboardFocusWithin(object instance)
+        private object get_167_DXControl_IsKeyboardFocusWithin(object instance)
         {
             var that = (global::DevExpress.Core.Native.DXControl)instance;
             return that.IsKeyboardFocusWithin;
         }
-        private object get_169_DXControl_IsLoaded(object instance)
+        private object get_168_DXControl_IsLoaded(object instance)
         {
             var that = (global::DevExpress.Core.Native.DXControl)instance;
             return that.IsLoaded;
         }
-        private object get_170_DXControl_IsMouseOver(object instance)
+        private object get_169_DXControl_IsMouseOver(object instance)
         {
             var that = (global::DevExpress.Core.Native.DXControl)instance;
             return that.IsMouseOver;
         }
-        private object get_171_DXControl_IsTabStop(object instance)
+        private object get_170_DXControl_IsTabStop(object instance)
         {
             var that = (global::DevExpress.Core.Native.DXControl)instance;
             return that.IsTabStop;
         }
-        private void set_171_DXControl_IsTabStop(object instance, object Value)
+        private void set_170_DXControl_IsTabStop(object instance, object Value)
         {
             var that = (global::DevExpress.Core.Native.DXControl)instance;
             that.IsTabStop = (global::System.Boolean)Value;
         }
-        private object get_172_DataControlBase_CurrentGrid(object instance)
+        private object get_171_DataControlBase_CurrentGrid(object instance)
         {
             return global::DevExpress.UI.Xaml.Grid.DataControlBase.GetCurrentGrid((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_172_DataControlBase_CurrentGrid(object instance, object Value)
+        private void set_171_DataControlBase_CurrentGrid(object instance, object Value)
         {
             global::DevExpress.UI.Xaml.Grid.DataControlBase.SetCurrentGrid((global::Windows.UI.Xaml.DependencyObject)instance, (global::DevExpress.UI.Xaml.Grid.DataControlBase)Value);
         }
-        private object get_173_DataControlBase_CurrentViewChangedListener(object instance)
+        private object get_172_DataControlBase_CurrentViewChangedListener(object instance)
         {
             return global::DevExpress.UI.Xaml.Grid.DataControlBase.GetCurrentViewChangedListener((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_173_DataControlBase_CurrentViewChangedListener(object instance, object Value)
+        private void set_172_DataControlBase_CurrentViewChangedListener(object instance, object Value)
         {
             global::DevExpress.UI.Xaml.Grid.DataControlBase.SetCurrentViewChangedListener((global::Windows.UI.Xaml.DependencyObject)instance, (global::DevExpress.UI.Xaml.Grid.INotifyCurrentViewChanged)Value);
         }
-        private object get_174_FeedbackListPage_DefaultViewModel(object instance)
+        private object get_173_FeedbackListPage_DefaultViewModel(object instance)
         {
             var that = (global::WS.CFS.FeedbackListPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_175_FeedbackListPage_NavigationHelper(object instance)
+        private object get_174_FeedbackListPage_NavigationHelper(object instance)
         {
             var that = (global::WS.CFS.FeedbackListPage)instance;
             return that.NavigationHelper;
         }
-        private object get_176_MainPage_DefaultViewModel(object instance)
-        {
-            var that = (global::WS.CFS.MainPage)instance;
-            return that.DefaultViewModel;
-        }
-        private object get_177_MainPage_NavigationHelper(object instance)
-        {
-            var that = (global::WS.CFS.MainPage)instance;
-            return that.NavigationHelper;
-        }
-        private object get_178_SearchResultsPage_DefaultViewModel(object instance)
+        private object get_175_SearchResultsPage_DefaultViewModel(object instance)
         {
             var that = (global::WS.CFS.SearchResultsPage)instance;
             return that.DefaultViewModel;
         }
-        private object get_179_SearchResultsPage_NavigationHelper(object instance)
+        private object get_176_SearchResultsPage_NavigationHelper(object instance)
         {
             var that = (global::WS.CFS.SearchResultsPage)instance;
             return that.NavigationHelper;
@@ -2750,662 +2729,656 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 xamlMember.Getter = get_7_AddFeedbackPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "WS.CFS.AddFeedbackPage.NewFeedback":
-                userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.AddFeedbackPage");
-                xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "NewFeedback", "WS.CFS.DataModel.Feedback");
-                xamlMember.Getter = get_8_AddFeedbackPage_NewFeedback;
-                xamlMember.Setter = set_8_AddFeedbackPage_NewFeedback;
-                break;
             case "WS.CFS.AddFeedbackPage.NavigationHelper":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.AddFeedbackPage");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "NavigationHelper", "WS.CFS.Common.NavigationHelper");
-                xamlMember.Getter = get_9_AddFeedbackPage_NavigationHelper;
+                xamlMember.Getter = get_8_AddFeedbackPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WS.CFS.DetailsPage.DefaultViewModel":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.DetailsPage");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "WS.CFS.Common.ObservableDictionary");
-                xamlMember.Getter = get_10_DetailsPage_DefaultViewModel;
+                xamlMember.Getter = get_9_DetailsPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WS.CFS.DetailsPage.NavigationHelper":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.DetailsPage");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "NavigationHelper", "WS.CFS.Common.NavigationHelper");
-                xamlMember.Getter = get_11_DetailsPage_NavigationHelper;
+                xamlMember.Getter = get_10_DetailsPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ItemsSource":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ItemsSource", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_DataControlBase_ItemsSource;
-                xamlMember.Setter = set_12_DataControlBase_ItemsSource;
+                xamlMember.Getter = get_11_DataControlBase_ItemsSource;
+                xamlMember.Setter = set_11_DataControlBase_ItemsSource;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.AutoGenerateColumns":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AutoGenerateColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_13_DataControlBase_AutoGenerateColumns;
-                xamlMember.Setter = set_13_DataControlBase_AutoGenerateColumns;
+                xamlMember.Getter = get_12_DataControlBase_AutoGenerateColumns;
+                xamlMember.Setter = set_12_DataControlBase_AutoGenerateColumns;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.ActualItemTemplateSelector":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualItemTemplateSelector", "Windows.UI.Xaml.Controls.DataTemplateSelector");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_14_GridControl_ActualItemTemplateSelector;
+                xamlMember.Getter = get_13_GridControl_ActualItemTemplateSelector;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.AllowHorizontalScrollingVirtualization":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowHorizontalScrollingVirtualization", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_15_GridControl_AllowHorizontalScrollingVirtualization;
-                xamlMember.Setter = set_15_GridControl_AllowHorizontalScrollingVirtualization;
+                xamlMember.Getter = get_14_GridControl_AllowHorizontalScrollingVirtualization;
+                xamlMember.Setter = set_14_GridControl_AllowHorizontalScrollingVirtualization;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.ItemMinHeight":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ItemMinHeight", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_16_GridControl_ItemMinHeight;
-                xamlMember.Setter = set_16_GridControl_ItemMinHeight;
+                xamlMember.Getter = get_15_GridControl_ItemMinHeight;
+                xamlMember.Setter = set_15_GridControl_ItemMinHeight;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.ItemContainerStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ItemContainerStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_17_GridControl_ItemContainerStyle;
-                xamlMember.Setter = set_17_GridControl_ItemContainerStyle;
+                xamlMember.Getter = get_16_GridControl_ItemContainerStyle;
+                xamlMember.Setter = set_16_GridControl_ItemContainerStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.ItemTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ItemTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_18_GridControl_ItemTemplate;
-                xamlMember.Setter = set_18_GridControl_ItemTemplate;
+                xamlMember.Getter = get_17_GridControl_ItemTemplate;
+                xamlMember.Setter = set_17_GridControl_ItemTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.ItemTemplateSelector":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ItemTemplateSelector", "Windows.UI.Xaml.Controls.DataTemplateSelector");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_19_GridControl_ItemTemplateSelector;
-                xamlMember.Setter = set_19_GridControl_ItemTemplateSelector;
+                xamlMember.Getter = get_18_GridControl_ItemTemplateSelector;
+                xamlMember.Setter = set_18_GridControl_ItemTemplateSelector;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.AutoWidth":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AutoWidth", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_20_GridControl_AutoWidth;
-                xamlMember.Setter = set_20_GridControl_AutoWidth;
+                xamlMember.Getter = get_19_GridControl_AutoWidth;
+                xamlMember.Setter = set_19_GridControl_AutoWidth;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.LeftDataAreaIndent":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "LeftDataAreaIndent", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_21_GridControl_LeftDataAreaIndent;
-                xamlMember.Setter = set_21_GridControl_LeftDataAreaIndent;
+                xamlMember.Getter = get_20_GridControl_LeftDataAreaIndent;
+                xamlMember.Setter = set_20_GridControl_LeftDataAreaIndent;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.RightDataAreaIndent":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "RightDataAreaIndent", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_22_GridControl_RightDataAreaIndent;
-                xamlMember.Setter = set_22_GridControl_RightDataAreaIndent;
+                xamlMember.Getter = get_21_GridControl_RightDataAreaIndent;
+                xamlMember.Setter = set_21_GridControl_RightDataAreaIndent;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.HorizontalViewport":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "HorizontalViewport", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_23_GridControl_HorizontalViewport;
+                xamlMember.Getter = get_22_GridControl_HorizontalViewport;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.LeftGroupAreaIndent":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "LeftGroupAreaIndent", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_24_GridControl_LeftGroupAreaIndent;
-                xamlMember.Setter = set_24_GridControl_LeftGroupAreaIndent;
+                xamlMember.Getter = get_23_GridControl_LeftGroupAreaIndent;
+                xamlMember.Setter = set_23_GridControl_LeftGroupAreaIndent;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.GroupSummaryDisplayMode":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupSummaryDisplayMode", "DevExpress.UI.Xaml.Grid.GroupSummaryDisplayMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_25_GridControl_GroupSummaryDisplayMode;
-                xamlMember.Setter = set_25_GridControl_GroupSummaryDisplayMode;
+                xamlMember.Getter = get_24_GridControl_GroupSummaryDisplayMode;
+                xamlMember.Setter = set_24_GridControl_GroupSummaryDisplayMode;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.GroupColumnSummaryContentStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupColumnSummaryContentStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_26_GridControl_GroupColumnSummaryContentStyle;
-                xamlMember.Setter = set_26_GridControl_GroupColumnSummaryContentStyle;
+                xamlMember.Getter = get_25_GridControl_GroupColumnSummaryContentStyle;
+                xamlMember.Setter = set_25_GridControl_GroupColumnSummaryContentStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.AutoExpandAllGroups":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AutoExpandAllGroups", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_27_GridControl_AutoExpandAllGroups;
-                xamlMember.Setter = set_27_GridControl_AutoExpandAllGroups;
+                xamlMember.Getter = get_26_GridControl_AutoExpandAllGroups;
+                xamlMember.Setter = set_26_GridControl_AutoExpandAllGroups;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.AllowLiveDataShaping":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowLiveDataShaping", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_28_GridControl_AllowLiveDataShaping;
-                xamlMember.Setter = set_28_GridControl_AllowLiveDataShaping;
+                xamlMember.Getter = get_27_GridControl_AllowLiveDataShaping;
+                xamlMember.Setter = set_27_GridControl_AllowLiveDataShaping;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.IsGrouped":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsGrouped", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_29_GridControl_IsGrouped;
+                xamlMember.Getter = get_28_GridControl_IsGrouped;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.ActualGroupCount":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualGroupCount", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_30_GridControl_ActualGroupCount;
+                xamlMember.Getter = get_29_GridControl_ActualGroupCount;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.GroupSummary":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupSummary", "DevExpress.UI.Xaml.Grid.GridSummaryItemCollection");
-                xamlMember.Getter = get_31_GridControl_GroupSummary;
+                xamlMember.Getter = get_30_GridControl_GroupSummary;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.SummaryItemBase.SummaryType":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.SummaryItemBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "SummaryType", "DevExpress.Data.SummaryItemType");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_32_SummaryItemBase_SummaryType;
-                xamlMember.Setter = set_32_SummaryItemBase_SummaryType;
+                xamlMember.Getter = get_31_SummaryItemBase_SummaryType;
+                xamlMember.Setter = set_31_SummaryItemBase_SummaryType;
                 break;
             case "DevExpress.UI.Xaml.Grid.SummaryItemBase.Tag":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.SummaryItemBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Tag", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_33_SummaryItemBase_Tag;
-                xamlMember.Setter = set_33_SummaryItemBase_Tag;
+                xamlMember.Getter = get_32_SummaryItemBase_Tag;
+                xamlMember.Setter = set_32_SummaryItemBase_Tag;
                 break;
             case "DevExpress.UI.Xaml.Grid.SummaryItemBase.FieldName":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.SummaryItemBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FieldName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_34_SummaryItemBase_FieldName;
-                xamlMember.Setter = set_34_SummaryItemBase_FieldName;
+                xamlMember.Getter = get_33_SummaryItemBase_FieldName;
+                xamlMember.Setter = set_33_SummaryItemBase_FieldName;
                 break;
             case "DevExpress.UI.Xaml.Grid.SummaryItemBase.DisplayFormat":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.SummaryItemBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "DisplayFormat", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_35_SummaryItemBase_DisplayFormat;
-                xamlMember.Setter = set_35_SummaryItemBase_DisplayFormat;
+                xamlMember.Getter = get_34_SummaryItemBase_DisplayFormat;
+                xamlMember.Setter = set_34_SummaryItemBase_DisplayFormat;
                 break;
             case "DevExpress.UI.Xaml.Grid.SummaryItemBase.ShowInColumn":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.SummaryItemBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ShowInColumn", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_36_SummaryItemBase_ShowInColumn;
-                xamlMember.Setter = set_36_SummaryItemBase_ShowInColumn;
+                xamlMember.Getter = get_35_SummaryItemBase_ShowInColumn;
+                xamlMember.Setter = set_35_SummaryItemBase_ShowInColumn;
                 break;
             case "DevExpress.UI.Xaml.Grid.SummaryItemBase.Visible":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.SummaryItemBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Visible", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_37_SummaryItemBase_Visible;
-                xamlMember.Setter = set_37_SummaryItemBase_Visible;
+                xamlMember.Getter = get_36_SummaryItemBase_Visible;
+                xamlMember.Setter = set_36_SummaryItemBase_Visible;
                 break;
             case "DevExpress.UI.Xaml.Grid.SummaryItemBase.Alignment":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.SummaryItemBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Alignment", "DevExpress.UI.Xaml.Grid.GridSummaryItemAlignment");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_38_SummaryItemBase_Alignment;
-                xamlMember.Setter = set_38_SummaryItemBase_Alignment;
+                xamlMember.Getter = get_37_SummaryItemBase_Alignment;
+                xamlMember.Setter = set_37_SummaryItemBase_Alignment;
                 break;
             case "DevExpress.UI.Xaml.Grid.SummaryItemBase.Caption":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.SummaryItemBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Caption", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_39_SummaryItemBase_Caption;
-                xamlMember.Setter = set_39_SummaryItemBase_Caption;
+                xamlMember.Getter = get_38_SummaryItemBase_Caption;
+                xamlMember.Setter = set_38_SummaryItemBase_Caption;
                 break;
             case "DevExpress.UI.Xaml.Grid.SummaryItemBase.FixedTotalSummaryItemTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.SummaryItemBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FixedTotalSummaryItemTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_40_SummaryItemBase_FixedTotalSummaryItemTemplate;
-                xamlMember.Setter = set_40_SummaryItemBase_FixedTotalSummaryItemTemplate;
+                xamlMember.Getter = get_39_SummaryItemBase_FixedTotalSummaryItemTemplate;
+                xamlMember.Setter = set_39_SummaryItemBase_FixedTotalSummaryItemTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.SummaryItemBase.IsLast":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.SummaryItemBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsLast", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_41_SummaryItemBase_IsLast;
-                xamlMember.Setter = set_41_SummaryItemBase_IsLast;
+                xamlMember.Getter = get_40_SummaryItemBase_IsLast;
+                xamlMember.Setter = set_40_SummaryItemBase_IsLast;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.Columns":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Columns", "DevExpress.UI.Xaml.Grid.GridColumnCollection");
-                xamlMember.Getter = get_42_GridControl_Columns;
+                xamlMember.Getter = get_41_GridControl_Columns;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridColumnBase.IsGrouped":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsGrouped", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_43_GridColumnBase_IsGrouped;
+                xamlMember.Getter = get_42_GridColumnBase_IsGrouped;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridColumnBase.GroupInterval":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupInterval", "DevExpress.XtraGrid.ColumnGroupInterval");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_44_GridColumnBase_GroupInterval;
-                xamlMember.Setter = set_44_GridColumnBase_GroupInterval;
+                xamlMember.Getter = get_43_GridColumnBase_GroupInterval;
+                xamlMember.Setter = set_43_GridColumnBase_GroupInterval;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridColumnBase.GroupIndex":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupIndex", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_45_GridColumnBase_GroupIndex;
-                xamlMember.Setter = set_45_GridColumnBase_GroupIndex;
+                xamlMember.Getter = get_44_GridColumnBase_GroupIndex;
+                xamlMember.Setter = set_44_GridColumnBase_GroupIndex;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridColumnBase.GroupValueTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupValueTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_46_GridColumnBase_GroupValueTemplate;
-                xamlMember.Setter = set_46_GridColumnBase_GroupValueTemplate;
+                xamlMember.Getter = get_45_GridColumnBase_GroupValueTemplate;
+                xamlMember.Setter = set_45_GridColumnBase_GroupValueTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridColumnBase.GroupValueTemplateSelector":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupValueTemplateSelector", "Windows.UI.Xaml.Controls.DataTemplateSelector");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_47_GridColumnBase_GroupValueTemplateSelector;
-                xamlMember.Setter = set_47_GridColumnBase_GroupValueTemplateSelector;
+                xamlMember.Getter = get_46_GridColumnBase_GroupValueTemplateSelector;
+                xamlMember.Setter = set_46_GridColumnBase_GroupValueTemplateSelector;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridColumnBase.ActualGroupValueTemplateSelector":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualGroupValueTemplateSelector", "Windows.UI.Xaml.Controls.DataTemplateSelector");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_48_GridColumnBase_ActualGroupValueTemplateSelector;
+                xamlMember.Getter = get_47_GridColumnBase_ActualGroupValueTemplateSelector;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridColumnBase.AllowGrouping":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowGrouping", "DevExpress.Utils.DefaultBoolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_49_GridColumnBase_AllowGrouping;
-                xamlMember.Setter = set_49_GridColumnBase_AllowGrouping;
+                xamlMember.Getter = get_48_GridColumnBase_AllowGrouping;
+                xamlMember.Setter = set_48_GridColumnBase_AllowGrouping;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridColumnBase.ActualAllowGrouping":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualAllowGrouping", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_50_GridColumnBase_ActualAllowGrouping;
+                xamlMember.Getter = get_49_GridColumnBase_ActualAllowGrouping;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridColumnBase.GroupColumnSummaryItemTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupColumnSummaryItemTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_51_GridColumnBase_GroupColumnSummaryItemTemplate;
-                xamlMember.Setter = set_51_GridColumnBase_GroupColumnSummaryItemTemplate;
+                xamlMember.Getter = get_50_GridColumnBase_GroupColumnSummaryItemTemplate;
+                xamlMember.Setter = set_50_GridColumnBase_GroupColumnSummaryItemTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridColumnBase.GroupColumnSummaryContentStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupColumnSummaryContentStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_52_GridColumnBase_GroupColumnSummaryContentStyle;
-                xamlMember.Setter = set_52_GridColumnBase_GroupColumnSummaryContentStyle;
+                xamlMember.Getter = get_51_GridColumnBase_GroupColumnSummaryContentStyle;
+                xamlMember.Setter = set_51_GridColumnBase_GroupColumnSummaryContentStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.DataControl":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "DataControl", "DevExpress.UI.Xaml.Grid.DataControlBase");
-                xamlMember.Getter = get_53_ColumnBase_DataControl;
+                xamlMember.Getter = get_52_ColumnBase_DataControl;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.HorizontalHeaderContentAlignment":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "HorizontalHeaderContentAlignment", "Windows.UI.Xaml.HorizontalAlignment");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_54_ColumnBase_HorizontalHeaderContentAlignment;
-                xamlMember.Setter = set_54_ColumnBase_HorizontalHeaderContentAlignment;
+                xamlMember.Getter = get_53_ColumnBase_HorizontalHeaderContentAlignment;
+                xamlMember.Setter = set_53_ColumnBase_HorizontalHeaderContentAlignment;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.IsSorted":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsSorted", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_55_ColumnBase_IsSorted;
+                xamlMember.Getter = get_54_ColumnBase_IsSorted;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.IsSortedBySummary":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsSortedBySummary", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_56_ColumnBase_IsSortedBySummary;
+                xamlMember.Getter = get_55_ColumnBase_IsSortedBySummary;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.SortOrder":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "SortOrder", "DevExpress.Data.ColumnSortOrder");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_57_ColumnBase_SortOrder;
-                xamlMember.Setter = set_57_ColumnBase_SortOrder;
+                xamlMember.Getter = get_56_ColumnBase_SortOrder;
+                xamlMember.Setter = set_56_ColumnBase_SortOrder;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.SortIndex":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "SortIndex", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_58_ColumnBase_SortIndex;
-                xamlMember.Setter = set_58_ColumnBase_SortIndex;
+                xamlMember.Getter = get_57_ColumnBase_SortIndex;
+                xamlMember.Setter = set_57_ColumnBase_SortIndex;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.FieldName":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FieldName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_59_ColumnBase_FieldName;
-                xamlMember.Setter = set_59_ColumnBase_FieldName;
+                xamlMember.Getter = get_58_ColumnBase_FieldName;
+                xamlMember.Setter = set_58_ColumnBase_FieldName;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.FieldType":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FieldType", "System.Type");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_60_ColumnBase_FieldType;
+                xamlMember.Getter = get_59_ColumnBase_FieldType;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.UnboundType":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "UnboundType", "DevExpress.Data.UnboundColumnType");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_61_ColumnBase_UnboundType;
-                xamlMember.Setter = set_61_ColumnBase_UnboundType;
+                xamlMember.Getter = get_60_ColumnBase_UnboundType;
+                xamlMember.Setter = set_60_ColumnBase_UnboundType;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.UnboundExpression":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "UnboundExpression", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_62_ColumnBase_UnboundExpression;
-                xamlMember.Setter = set_62_ColumnBase_UnboundExpression;
+                xamlMember.Getter = get_61_ColumnBase_UnboundExpression;
+                xamlMember.Setter = set_61_ColumnBase_UnboundExpression;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.AllowEditing":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowEditing", "DevExpress.Utils.DefaultBoolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_63_ColumnBase_AllowEditing;
-                xamlMember.Setter = set_63_ColumnBase_AllowEditing;
+                xamlMember.Getter = get_62_ColumnBase_AllowEditing;
+                xamlMember.Setter = set_62_ColumnBase_AllowEditing;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.TotalSummaryContentStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "TotalSummaryContentStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_64_ColumnBase_TotalSummaryContentStyle;
-                xamlMember.Setter = set_64_ColumnBase_TotalSummaryContentStyle;
+                xamlMember.Getter = get_63_ColumnBase_TotalSummaryContentStyle;
+                xamlMember.Setter = set_63_ColumnBase_TotalSummaryContentStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ActualTotalSummaryContentStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualTotalSummaryContentStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_65_ColumnBase_ActualTotalSummaryContentStyle;
+                xamlMember.Getter = get_64_ColumnBase_ActualTotalSummaryContentStyle;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.SortMode":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "SortMode", "DevExpress.XtraGrid.ColumnSortMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_66_ColumnBase_SortMode;
-                xamlMember.Setter = set_66_ColumnBase_SortMode;
+                xamlMember.Getter = get_65_ColumnBase_SortMode;
+                xamlMember.Setter = set_65_ColumnBase_SortMode;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.CellStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "CellStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_67_ColumnBase_CellStyle;
-                xamlMember.Setter = set_67_ColumnBase_CellStyle;
+                xamlMember.Getter = get_66_ColumnBase_CellStyle;
+                xamlMember.Setter = set_66_ColumnBase_CellStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.HeaderStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "HeaderStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_68_ColumnBase_HeaderStyle;
-                xamlMember.Setter = set_68_ColumnBase_HeaderStyle;
+                xamlMember.Getter = get_67_ColumnBase_HeaderStyle;
+                xamlMember.Setter = set_67_ColumnBase_HeaderStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ActualCellStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualCellStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_69_ColumnBase_ActualCellStyle;
+                xamlMember.Getter = get_68_ColumnBase_ActualCellStyle;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ActualHeaderStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualHeaderStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_70_ColumnBase_ActualHeaderStyle;
+                xamlMember.Getter = get_69_ColumnBase_ActualHeaderStyle;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ActualAllowColumnFiltering":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualAllowColumnFiltering", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_71_ColumnBase_ActualAllowColumnFiltering;
+                xamlMember.Getter = get_70_ColumnBase_ActualAllowColumnFiltering;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.HasRightSibling":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "HasRightSibling", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_72_ColumnBase_HasRightSibling;
-                xamlMember.Setter = set_72_ColumnBase_HasRightSibling;
+                xamlMember.Getter = get_71_ColumnBase_HasRightSibling;
+                xamlMember.Setter = set_71_ColumnBase_HasRightSibling;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.HasLeftSibling":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "HasLeftSibling", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_73_ColumnBase_HasLeftSibling;
-                xamlMember.Setter = set_73_ColumnBase_HasLeftSibling;
+                xamlMember.Getter = get_72_ColumnBase_HasLeftSibling;
+                xamlMember.Setter = set_72_ColumnBase_HasLeftSibling;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.VisibleIndex":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "VisibleIndex", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_74_ColumnBase_VisibleIndex;
-                xamlMember.Setter = set_74_ColumnBase_VisibleIndex;
+                xamlMember.Getter = get_73_ColumnBase_VisibleIndex;
+                xamlMember.Setter = set_73_ColumnBase_VisibleIndex;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.IsLast":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsLast", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_75_ColumnBase_IsLast;
+                xamlMember.Getter = get_74_ColumnBase_IsLast;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.IsFirst":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsFirst", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_76_ColumnBase_IsFirst;
+                xamlMember.Getter = get_75_ColumnBase_IsFirst;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.Name":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Name", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_77_ColumnBase_Name;
-                xamlMember.Setter = set_77_ColumnBase_Name;
+                xamlMember.Getter = get_76_ColumnBase_Name;
+                xamlMember.Setter = set_76_ColumnBase_Name;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.Tag":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Tag", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_78_ColumnBase_Tag;
-                xamlMember.Setter = set_78_ColumnBase_Tag;
+                xamlMember.Getter = get_77_ColumnBase_Tag;
+                xamlMember.Setter = set_77_ColumnBase_Tag;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.Commands":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Commands", "DevExpress.UI.Xaml.Grid.GridColumnCommands");
-                xamlMember.Getter = get_79_ColumnBase_Commands;
+                xamlMember.Getter = get_78_ColumnBase_Commands;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.Header":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Header", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_80_ColumnBase_Header;
-                xamlMember.Setter = set_80_ColumnBase_Header;
+                xamlMember.Getter = get_79_ColumnBase_Header;
+                xamlMember.Setter = set_79_ColumnBase_Header;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.HeaderCaption":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "HeaderCaption", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_81_ColumnBase_HeaderCaption;
+                xamlMember.Getter = get_80_ColumnBase_HeaderCaption;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ActualHeaderWidth":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualHeaderWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_82_ColumnBase_ActualHeaderWidth;
+                xamlMember.Getter = get_81_ColumnBase_ActualHeaderWidth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ActualDataWidth":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualDataWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_83_ColumnBase_ActualDataWidth;
+                xamlMember.Getter = get_82_ColumnBase_ActualDataWidth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.Width":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Width", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_84_ColumnBase_Width;
-                xamlMember.Setter = set_84_ColumnBase_Width;
+                xamlMember.Getter = get_83_ColumnBase_Width;
+                xamlMember.Setter = set_83_ColumnBase_Width;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.MinWidth":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "MinWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_85_ColumnBase_MinWidth;
-                xamlMember.Setter = set_85_ColumnBase_MinWidth;
+                xamlMember.Getter = get_84_ColumnBase_MinWidth;
+                xamlMember.Setter = set_84_ColumnBase_MinWidth;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ActualWidth":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_86_ColumnBase_ActualWidth;
+                xamlMember.Getter = get_85_ColumnBase_ActualWidth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.FixedWidth":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FixedWidth", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_87_ColumnBase_FixedWidth;
-                xamlMember.Setter = set_87_ColumnBase_FixedWidth;
+                xamlMember.Getter = get_86_ColumnBase_FixedWidth;
+                xamlMember.Setter = set_86_ColumnBase_FixedWidth;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.Visible":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Visible", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_88_ColumnBase_Visible;
-                xamlMember.Setter = set_88_ColumnBase_Visible;
+                xamlMember.Getter = get_87_ColumnBase_Visible;
+                xamlMember.Setter = set_87_ColumnBase_Visible;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.AllowSorting":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowSorting", "DevExpress.Utils.DefaultBoolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_89_ColumnBase_AllowSorting;
-                xamlMember.Setter = set_89_ColumnBase_AllowSorting;
+                xamlMember.Getter = get_88_ColumnBase_AllowSorting;
+                xamlMember.Setter = set_88_ColumnBase_AllowSorting;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ActualAllowSorting":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualAllowSorting", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_90_ColumnBase_ActualAllowSorting;
+                xamlMember.Getter = get_89_ColumnBase_ActualAllowSorting;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.AllowMoving":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowMoving", "DevExpress.Utils.DefaultBoolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_91_ColumnBase_AllowMoving;
-                xamlMember.Setter = set_91_ColumnBase_AllowMoving;
+                xamlMember.Getter = get_90_ColumnBase_AllowMoving;
+                xamlMember.Setter = set_90_ColumnBase_AllowMoving;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ActualAllowMoving":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualAllowMoving", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_92_ColumnBase_ActualAllowMoving;
+                xamlMember.Getter = get_91_ColumnBase_ActualAllowMoving;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ColumnPosition":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ColumnPosition", "DevExpress.UI.Xaml.Grid.ColumnPosition");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_93_ColumnBase_ColumnPosition;
-                xamlMember.Setter = set_93_ColumnBase_ColumnPosition;
+                xamlMember.Getter = get_92_ColumnBase_ColumnPosition;
+                xamlMember.Setter = set_92_ColumnBase_ColumnPosition;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.HeaderTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "HeaderTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_94_ColumnBase_HeaderTemplate;
-                xamlMember.Setter = set_94_ColumnBase_HeaderTemplate;
+                xamlMember.Getter = get_93_ColumnBase_HeaderTemplate;
+                xamlMember.Setter = set_93_ColumnBase_HeaderTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.HeaderTemplateSelector":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "HeaderTemplateSelector", "Windows.UI.Xaml.Controls.DataTemplateSelector");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_95_ColumnBase_HeaderTemplateSelector;
-                xamlMember.Setter = set_95_ColumnBase_HeaderTemplateSelector;
+                xamlMember.Getter = get_94_ColumnBase_HeaderTemplateSelector;
+                xamlMember.Setter = set_94_ColumnBase_HeaderTemplateSelector;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ActualHeaderTemplateSelector":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualHeaderTemplateSelector", "Windows.UI.Xaml.Controls.DataTemplateSelector");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_96_ColumnBase_ActualHeaderTemplateSelector;
+                xamlMember.Getter = get_95_ColumnBase_ActualHeaderTemplateSelector;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.HasTotalSummaries":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "HasTotalSummaries", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_97_ColumnBase_HasTotalSummaries;
+                xamlMember.Getter = get_96_ColumnBase_HasTotalSummaries;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.TotalSummaryText":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "TotalSummaryText", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_98_ColumnBase_TotalSummaryText;
+                xamlMember.Getter = get_97_ColumnBase_TotalSummaryText;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.AllowColumnFiltering":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowColumnFiltering", "DevExpress.Utils.DefaultBoolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_99_ColumnBase_AllowColumnFiltering;
-                xamlMember.Setter = set_99_ColumnBase_AllowColumnFiltering;
+                xamlMember.Getter = get_98_ColumnBase_AllowColumnFiltering;
+                xamlMember.Setter = set_98_ColumnBase_AllowColumnFiltering;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.FilterPopupMode":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FilterPopupMode", "DevExpress.UI.Xaml.Grid.FilterPopupMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_100_ColumnBase_FilterPopupMode;
-                xamlMember.Setter = set_100_ColumnBase_FilterPopupMode;
+                xamlMember.Getter = get_99_ColumnBase_FilterPopupMode;
+                xamlMember.Setter = set_99_ColumnBase_FilterPopupMode;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.ImmediateUpdateColumnFilter":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ImmediateUpdateColumnFilter", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_101_ColumnBase_ImmediateUpdateColumnFilter;
-                xamlMember.Setter = set_101_ColumnBase_ImmediateUpdateColumnFilter;
+                xamlMember.Getter = get_100_ColumnBase_ImmediateUpdateColumnFilter;
+                xamlMember.Setter = set_100_ColumnBase_ImmediateUpdateColumnFilter;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.CustomColumnFilterPopupTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "CustomColumnFilterPopupTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_102_ColumnBase_CustomColumnFilterPopupTemplate;
-                xamlMember.Setter = set_102_ColumnBase_CustomColumnFilterPopupTemplate;
+                xamlMember.Getter = get_101_ColumnBase_CustomColumnFilterPopupTemplate;
+                xamlMember.Setter = set_101_ColumnBase_CustomColumnFilterPopupTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.ColumnBase.HeaderPresenterType":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.ColumnBase");
@@ -3413,467 +3386,467 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_103_ColumnBase_HeaderPresenterType;
-                xamlMember.Setter = set_103_ColumnBase_HeaderPresenterType;
+                xamlMember.Getter = get_102_ColumnBase_HeaderPresenterType;
+                xamlMember.Setter = set_102_ColumnBase_HeaderPresenterType;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControl.TotalSummary":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "TotalSummary", "DevExpress.UI.Xaml.Grid.GridSummaryItemCollection");
-                xamlMember.Getter = get_104_GridControl_TotalSummary;
+                xamlMember.Getter = get_103_GridControl_TotalSummary;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControlBase.CurrentColumn":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "CurrentColumn", "DevExpress.UI.Xaml.Grid.GridColumnBase");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_105_GridControlBase_CurrentColumn;
-                xamlMember.Setter = set_105_GridControlBase_CurrentColumn;
+                xamlMember.Getter = get_104_GridControlBase_CurrentColumn;
+                xamlMember.Setter = set_104_GridControlBase_CurrentColumn;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControlBase.AllowGrouping":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowGrouping", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_106_GridControlBase_AllowGrouping;
-                xamlMember.Setter = set_106_GridControlBase_AllowGrouping;
+                xamlMember.Getter = get_105_GridControlBase_AllowGrouping;
+                xamlMember.Setter = set_105_GridControlBase_AllowGrouping;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControlBase.VisibleColumns":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "VisibleColumns", "System.Collections.Generic.IList`1<DevExpress.UI.Xaml.Grid.GridColumnBase>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_107_GridControlBase_VisibleColumns;
+                xamlMember.Getter = get_106_GridControlBase_VisibleColumns;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControlBase.ShowGroupPanel":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ShowGroupPanel", "DevExpress.Utils.DefaultBoolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_108_GridControlBase_ShowGroupPanel;
-                xamlMember.Setter = set_108_GridControlBase_ShowGroupPanel;
+                xamlMember.Getter = get_107_GridControlBase_ShowGroupPanel;
+                xamlMember.Setter = set_107_GridControlBase_ShowGroupPanel;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControlBase.ShowGroupedColumns":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ShowGroupedColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_109_GridControlBase_ShowGroupedColumns;
-                xamlMember.Setter = set_109_GridControlBase_ShowGroupedColumns;
+                xamlMember.Getter = get_108_GridControlBase_ShowGroupedColumns;
+                xamlMember.Setter = set_108_GridControlBase_ShowGroupedColumns;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControlBase.GroupSummaryContentStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupSummaryContentStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_110_GridControlBase_GroupSummaryContentStyle;
-                xamlMember.Setter = set_110_GridControlBase_GroupSummaryContentStyle;
+                xamlMember.Getter = get_109_GridControlBase_GroupSummaryContentStyle;
+                xamlMember.Setter = set_109_GridControlBase_GroupSummaryContentStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControlBase.GroupSummaryItemTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupSummaryItemTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_111_GridControlBase_GroupSummaryItemTemplate;
-                xamlMember.Setter = set_111_GridControlBase_GroupSummaryItemTemplate;
+                xamlMember.Getter = get_110_GridControlBase_GroupSummaryItemTemplate;
+                xamlMember.Setter = set_110_GridControlBase_GroupSummaryItemTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControlBase.GroupValueTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupValueTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_112_GridControlBase_GroupValueTemplate;
-                xamlMember.Setter = set_112_GridControlBase_GroupValueTemplate;
+                xamlMember.Getter = get_111_GridControlBase_GroupValueTemplate;
+                xamlMember.Setter = set_111_GridControlBase_GroupValueTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.GridControlBase.GroupValueTemplateSelector":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "GroupValueTemplateSelector", "Windows.UI.Xaml.Controls.DataTemplateSelector");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_113_GridControlBase_GroupValueTemplateSelector;
-                xamlMember.Setter = set_113_GridControlBase_GroupValueTemplateSelector;
+                xamlMember.Getter = get_112_GridControlBase_GroupValueTemplateSelector;
+                xamlMember.Setter = set_112_GridControlBase_GroupValueTemplateSelector;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.VirtualizingCacheHeight":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "VirtualizingCacheHeight", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_114_DataControlBase_VirtualizingCacheHeight;
-                xamlMember.Setter = set_114_DataControlBase_VirtualizingCacheHeight;
+                xamlMember.Getter = get_113_DataControlBase_VirtualizingCacheHeight;
+                xamlMember.Setter = set_113_DataControlBase_VirtualizingCacheHeight;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.VirtualizingCacheWidth":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "VirtualizingCacheWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_115_DataControlBase_VirtualizingCacheWidth;
-                xamlMember.Setter = set_115_DataControlBase_VirtualizingCacheWidth;
+                xamlMember.Getter = get_114_DataControlBase_VirtualizingCacheWidth;
+                xamlMember.Setter = set_114_DataControlBase_VirtualizingCacheWidth;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.VisibleRowCount":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "VisibleRowCount", "Int32");
-                xamlMember.Getter = get_116_DataControlBase_VisibleRowCount;
+                xamlMember.Getter = get_115_DataControlBase_VisibleRowCount;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ActiveEditor":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActiveEditor", "Windows.UI.Xaml.Controls.Control");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_117_DataControlBase_ActiveEditor;
+                xamlMember.Getter = get_116_DataControlBase_ActiveEditor;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ShowFilterPanelMode":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ShowFilterPanelMode", "DevExpress.UI.Xaml.Grid.ShowFilterPanelMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_118_DataControlBase_ShowFilterPanelMode;
-                xamlMember.Setter = set_118_DataControlBase_ShowFilterPanelMode;
+                xamlMember.Getter = get_117_DataControlBase_ShowFilterPanelMode;
+                xamlMember.Setter = set_117_DataControlBase_ShowFilterPanelMode;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ActualShowFilterPanel":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ActualShowFilterPanel", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_119_DataControlBase_ActualShowFilterPanel;
+                xamlMember.Getter = get_118_DataControlBase_ActualShowFilterPanel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.FilterPanelText":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FilterPanelText", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_120_DataControlBase_FilterPanelText;
+                xamlMember.Getter = get_119_DataControlBase_FilterPanelText;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.AllowEditing":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowEditing", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_121_DataControlBase_AllowEditing;
-                xamlMember.Setter = set_121_DataControlBase_AllowEditing;
+                xamlMember.Getter = get_120_DataControlBase_AllowEditing;
+                xamlMember.Setter = set_120_DataControlBase_AllowEditing;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.AllowColumnMoving":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowColumnMoving", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_122_DataControlBase_AllowColumnMoving;
-                xamlMember.Setter = set_122_DataControlBase_AllowColumnMoving;
+                xamlMember.Getter = get_121_DataControlBase_AllowColumnMoving;
+                xamlMember.Setter = set_121_DataControlBase_AllowColumnMoving;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.AllowColumnFiltering":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowColumnFiltering", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_123_DataControlBase_AllowColumnFiltering;
-                xamlMember.Setter = set_123_DataControlBase_AllowColumnFiltering;
+                xamlMember.Getter = get_122_DataControlBase_AllowColumnFiltering;
+                xamlMember.Setter = set_122_DataControlBase_AllowColumnFiltering;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.IsFilterEnabled":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsFilterEnabled", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_124_DataControlBase_IsFilterEnabled;
-                xamlMember.Setter = set_124_DataControlBase_IsFilterEnabled;
+                xamlMember.Getter = get_123_DataControlBase_IsFilterEnabled;
+                xamlMember.Setter = set_123_DataControlBase_IsFilterEnabled;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.FilterCriteria":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FilterCriteria", "DevExpress.Data.Filtering.CriteriaOperator");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_125_DataControlBase_FilterCriteria;
-                xamlMember.Setter = set_125_DataControlBase_FilterCriteria;
+                xamlMember.Getter = get_124_DataControlBase_FilterCriteria;
+                xamlMember.Setter = set_124_DataControlBase_FilterCriteria;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.FilterString":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FilterString", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_126_DataControlBase_FilterString;
-                xamlMember.Setter = set_126_DataControlBase_FilterString;
+                xamlMember.Getter = get_125_DataControlBase_FilterString;
+                xamlMember.Setter = set_125_DataControlBase_FilterString;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.FixedTotalSummaryItemTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FixedTotalSummaryItemTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_127_DataControlBase_FixedTotalSummaryItemTemplate;
-                xamlMember.Setter = set_127_DataControlBase_FixedTotalSummaryItemTemplate;
+                xamlMember.Getter = get_126_DataControlBase_FixedTotalSummaryItemTemplate;
+                xamlMember.Setter = set_126_DataControlBase_FixedTotalSummaryItemTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.AllowSorting":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AllowSorting", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_128_DataControlBase_AllowSorting;
-                xamlMember.Setter = set_128_DataControlBase_AllowSorting;
+                xamlMember.Getter = get_127_DataControlBase_AllowSorting;
+                xamlMember.Setter = set_127_DataControlBase_AllowSorting;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.SelectedItemHandle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "SelectedItemHandle", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_129_DataControlBase_SelectedItemHandle;
-                xamlMember.Setter = set_129_DataControlBase_SelectedItemHandle;
+                xamlMember.Getter = get_128_DataControlBase_SelectedItemHandle;
+                xamlMember.Setter = set_128_DataControlBase_SelectedItemHandle;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.NavigationStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "NavigationStyle", "DevExpress.UI.Xaml.Grid.GridControlNavigationStyle");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_130_DataControlBase_NavigationStyle;
-                xamlMember.Setter = set_130_DataControlBase_NavigationStyle;
+                xamlMember.Getter = get_129_DataControlBase_NavigationStyle;
+                xamlMember.Setter = set_129_DataControlBase_NavigationStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.SelectedItem":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "SelectedItem", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_131_DataControlBase_SelectedItem;
-                xamlMember.Setter = set_131_DataControlBase_SelectedItem;
+                xamlMember.Getter = get_130_DataControlBase_SelectedItem;
+                xamlMember.Setter = set_130_DataControlBase_SelectedItem;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.CurrentItem":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "CurrentItem", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_132_DataControlBase_CurrentItem;
-                xamlMember.Setter = set_132_DataControlBase_CurrentItem;
+                xamlMember.Getter = get_131_DataControlBase_CurrentItem;
+                xamlMember.Setter = set_131_DataControlBase_CurrentItem;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.KeepFocusedRowOnUpdate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "KeepFocusedRowOnUpdate", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_133_DataControlBase_KeepFocusedRowOnUpdate;
-                xamlMember.Setter = set_133_DataControlBase_KeepFocusedRowOnUpdate;
+                xamlMember.Getter = get_132_DataControlBase_KeepFocusedRowOnUpdate;
+                xamlMember.Setter = set_132_DataControlBase_KeepFocusedRowOnUpdate;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.IsSynchronizedWithCurrentItem":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsSynchronizedWithCurrentItem", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_134_DataControlBase_IsSynchronizedWithCurrentItem;
-                xamlMember.Setter = set_134_DataControlBase_IsSynchronizedWithCurrentItem;
+                xamlMember.Getter = get_133_DataControlBase_IsSynchronizedWithCurrentItem;
+                xamlMember.Setter = set_133_DataControlBase_IsSynchronizedWithCurrentItem;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.FocusedBorderTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FocusedBorderTemplate", "Windows.UI.Xaml.Controls.ControlTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_135_DataControlBase_FocusedBorderTemplate;
-                xamlMember.Setter = set_135_DataControlBase_FocusedBorderTemplate;
+                xamlMember.Getter = get_134_DataControlBase_FocusedBorderTemplate;
+                xamlMember.Setter = set_134_DataControlBase_FocusedBorderTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.AutoScrollOnSorting":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "AutoScrollOnSorting", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_136_DataControlBase_AutoScrollOnSorting;
-                xamlMember.Setter = set_136_DataControlBase_AutoScrollOnSorting;
+                xamlMember.Getter = get_135_DataControlBase_AutoScrollOnSorting;
+                xamlMember.Setter = set_135_DataControlBase_AutoScrollOnSorting;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ShowTotalSummary":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ShowTotalSummary", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_137_DataControlBase_ShowTotalSummary;
-                xamlMember.Setter = set_137_DataControlBase_ShowTotalSummary;
+                xamlMember.Getter = get_136_DataControlBase_ShowTotalSummary;
+                xamlMember.Setter = set_136_DataControlBase_ShowTotalSummary;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ShowColumnHeaders":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ShowColumnHeaders", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_138_DataControlBase_ShowColumnHeaders;
-                xamlMember.Setter = set_138_DataControlBase_ShowColumnHeaders;
+                xamlMember.Getter = get_137_DataControlBase_ShowColumnHeaders;
+                xamlMember.Setter = set_137_DataControlBase_ShowColumnHeaders;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.TotalSummaryContentStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "TotalSummaryContentStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_139_DataControlBase_TotalSummaryContentStyle;
-                xamlMember.Setter = set_139_DataControlBase_TotalSummaryContentStyle;
+                xamlMember.Getter = get_138_DataControlBase_TotalSummaryContentStyle;
+                xamlMember.Setter = set_138_DataControlBase_TotalSummaryContentStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ColumnHeaderStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ColumnHeaderStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_140_DataControlBase_ColumnHeaderStyle;
-                xamlMember.Setter = set_140_DataControlBase_ColumnHeaderStyle;
+                xamlMember.Getter = get_139_DataControlBase_ColumnHeaderStyle;
+                xamlMember.Setter = set_139_DataControlBase_ColumnHeaderStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.CellStyle":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "CellStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_141_DataControlBase_CellStyle;
-                xamlMember.Setter = set_141_DataControlBase_CellStyle;
+                xamlMember.Getter = get_140_DataControlBase_CellStyle;
+                xamlMember.Setter = set_140_DataControlBase_CellStyle;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.TotalSummaryItemTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "TotalSummaryItemTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_142_DataControlBase_TotalSummaryItemTemplate;
-                xamlMember.Setter = set_142_DataControlBase_TotalSummaryItemTemplate;
+                xamlMember.Getter = get_141_DataControlBase_TotalSummaryItemTemplate;
+                xamlMember.Setter = set_141_DataControlBase_TotalSummaryItemTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ColumnHeaderTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ColumnHeaderTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_143_DataControlBase_ColumnHeaderTemplate;
-                xamlMember.Setter = set_143_DataControlBase_ColumnHeaderTemplate;
+                xamlMember.Getter = get_142_DataControlBase_ColumnHeaderTemplate;
+                xamlMember.Setter = set_142_DataControlBase_ColumnHeaderTemplate;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ColumnHeaderTemplateSelector":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ColumnHeaderTemplateSelector", "Windows.UI.Xaml.Controls.DataTemplateSelector");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_144_DataControlBase_ColumnHeaderTemplateSelector;
-                xamlMember.Setter = set_144_DataControlBase_ColumnHeaderTemplateSelector;
+                xamlMember.Getter = get_143_DataControlBase_ColumnHeaderTemplateSelector;
+                xamlMember.Setter = set_143_DataControlBase_ColumnHeaderTemplateSelector;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.Commands":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Commands", "DevExpress.UI.Xaml.Grid.DataControlCommandsBase");
-                xamlMember.Getter = get_145_DataControlBase_Commands;
+                xamlMember.Getter = get_144_DataControlBase_Commands;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.SummariesIgnoreNullValues":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "SummariesIgnoreNullValues", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_146_DataControlBase_SummariesIgnoreNullValues;
-                xamlMember.Setter = set_146_DataControlBase_SummariesIgnoreNullValues;
+                xamlMember.Getter = get_145_DataControlBase_SummariesIgnoreNullValues;
+                xamlMember.Setter = set_145_DataControlBase_SummariesIgnoreNullValues;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ShowFixedTotalSummary":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ShowFixedTotalSummary", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_147_DataControlBase_ShowFixedTotalSummary;
-                xamlMember.Setter = set_147_DataControlBase_ShowFixedTotalSummary;
+                xamlMember.Getter = get_146_DataControlBase_ShowFixedTotalSummary;
+                xamlMember.Setter = set_146_DataControlBase_ShowFixedTotalSummary;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.PreserveSorting":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "PreserveSorting", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_148_DataControlBase_PreserveSorting;
-                xamlMember.Setter = set_148_DataControlBase_PreserveSorting;
+                xamlMember.Getter = get_147_DataControlBase_PreserveSorting;
+                xamlMember.Setter = set_147_DataControlBase_PreserveSorting;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.SelectionMode":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "SelectionMode", "DevExpress.UI.Xaml.Grid.MultiSelectMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_149_DataControlBase_SelectionMode;
-                xamlMember.Setter = set_149_DataControlBase_SelectionMode;
+                xamlMember.Getter = get_148_DataControlBase_SelectionMode;
+                xamlMember.Setter = set_148_DataControlBase_SelectionMode;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.SelectedItems":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "SelectedItems", "System.Collections.IList");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_150_DataControlBase_SelectedItems;
-                xamlMember.Setter = set_150_DataControlBase_SelectedItems;
+                xamlMember.Getter = get_149_DataControlBase_SelectedItems;
+                xamlMember.Setter = set_149_DataControlBase_SelectedItems;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ItemNavigationTargetType":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ItemNavigationTargetType", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_151_DataControlBase_ItemNavigationTargetType;
-                xamlMember.Setter = set_151_DataControlBase_ItemNavigationTargetType;
+                xamlMember.Getter = get_150_DataControlBase_ItemNavigationTargetType;
+                xamlMember.Setter = set_150_DataControlBase_ItemNavigationTargetType;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ItemNavigationMode":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ItemNavigationMode", "DevExpress.UI.Xaml.Grid.ItemNavigationMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_152_DataControlBase_ItemNavigationMode;
-                xamlMember.Setter = set_152_DataControlBase_ItemNavigationMode;
+                xamlMember.Getter = get_151_DataControlBase_ItemNavigationMode;
+                xamlMember.Setter = set_151_DataControlBase_ItemNavigationMode;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ItemClickCommand":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ItemClickCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_153_DataControlBase_ItemClickCommand;
-                xamlMember.Setter = set_153_DataControlBase_ItemClickCommand;
+                xamlMember.Getter = get_152_DataControlBase_ItemClickCommand;
+                xamlMember.Setter = set_152_DataControlBase_ItemClickCommand;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.ItemNavigationTargetParameterBinding":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "ItemNavigationTargetParameterBinding", "Windows.UI.Xaml.Data.BindingBase");
-                xamlMember.Getter = get_154_DataControlBase_ItemNavigationTargetParameterBinding;
-                xamlMember.Setter = set_154_DataControlBase_ItemNavigationTargetParameterBinding;
+                xamlMember.Getter = get_153_DataControlBase_ItemNavigationTargetParameterBinding;
+                xamlMember.Setter = set_153_DataControlBase_ItemNavigationTargetParameterBinding;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.FixedSummariesLeft":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FixedSummariesLeft", "System.Collections.Generic.IList`1<DevExpress.UI.Xaml.Grid.GridTotalSummaryData>");
-                xamlMember.Getter = get_155_DataControlBase_FixedSummariesLeft;
+                xamlMember.Getter = get_154_DataControlBase_FixedSummariesLeft;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridTotalSummaryData.Item":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridTotalSummaryData");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Item", "DevExpress.UI.Xaml.Grid.SummaryItemBase");
-                xamlMember.Getter = get_156_GridTotalSummaryData_Item;
+                xamlMember.Getter = get_155_GridTotalSummaryData_Item;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridTotalSummaryData.Value":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridTotalSummaryData");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Value", "Object");
-                xamlMember.Getter = get_157_GridTotalSummaryData_Value;
+                xamlMember.Getter = get_156_GridTotalSummaryData_Value;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridTotalSummaryData.DisplayValue":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridTotalSummaryData");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "DisplayValue", "Object");
-                xamlMember.Getter = get_158_GridTotalSummaryData_DisplayValue;
+                xamlMember.Getter = get_157_GridTotalSummaryData_DisplayValue;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridTotalSummaryData.Caption":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridTotalSummaryData");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Caption", "String");
-                xamlMember.Getter = get_159_GridTotalSummaryData_Caption;
+                xamlMember.Getter = get_158_GridTotalSummaryData_Caption;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridTotalSummaryData.Column":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridTotalSummaryData");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Column", "DevExpress.UI.Xaml.Grid.ColumnBase");
-                xamlMember.Getter = get_160_GridTotalSummaryData_Column;
+                xamlMember.Getter = get_159_GridTotalSummaryData_Column;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridTotalSummaryData.FixedTotalSummaryItemTemplate":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridTotalSummaryData");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FixedTotalSummaryItemTemplate", "Windows.UI.Xaml.DataTemplate");
-                xamlMember.Getter = get_161_GridTotalSummaryData_FixedTotalSummaryItemTemplate;
+                xamlMember.Getter = get_160_GridTotalSummaryData_FixedTotalSummaryItemTemplate;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.GridTotalSummaryData.DataControl":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.GridTotalSummaryData");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "DataControl", "DevExpress.UI.Xaml.Grid.DataControlBase");
-                xamlMember.Getter = get_162_GridTotalSummaryData_DataControl;
+                xamlMember.Getter = get_161_GridTotalSummaryData_DataControl;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.FixedSummariesRight":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "FixedSummariesRight", "System.Collections.Generic.IList`1<DevExpress.UI.Xaml.Grid.GridTotalSummaryData>");
-                xamlMember.Getter = get_163_DataControlBase_FixedSummariesRight;
+                xamlMember.Getter = get_162_DataControlBase_FixedSummariesRight;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.HeadersData":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "HeadersData", "DevExpress.UI.Xaml.Grid.HeadersData");
-                xamlMember.Getter = get_164_DataControlBase_HeadersData;
+                xamlMember.Getter = get_163_DataControlBase_HeadersData;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.TotalSummaryData":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "TotalSummaryData", "DevExpress.UI.Xaml.Grid.TotalSummaryData");
-                xamlMember.Getter = get_165_DataControlBase_TotalSummaryData;
+                xamlMember.Getter = get_164_DataControlBase_TotalSummaryData;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.Core.Native.DXControl.Focusable":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.Core.Native.DXControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "Focusable", "Boolean");
-                xamlMember.Getter = get_166_DXControl_Focusable;
-                xamlMember.Setter = set_166_DXControl_Focusable;
+                xamlMember.Getter = get_165_DXControl_Focusable;
+                xamlMember.Setter = set_165_DXControl_Focusable;
                 break;
             case "DevExpress.Core.Native.DXControl.IsFocused":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.Core.Native.DXControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsFocused", "Boolean");
-                xamlMember.Getter = get_167_DXControl_IsFocused;
+                xamlMember.Getter = get_166_DXControl_IsFocused;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.Core.Native.DXControl.IsKeyboardFocusWithin":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.Core.Native.DXControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsKeyboardFocusWithin", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_168_DXControl_IsKeyboardFocusWithin;
+                xamlMember.Getter = get_167_DXControl_IsKeyboardFocusWithin;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.Core.Native.DXControl.IsLoaded":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.Core.Native.DXControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsLoaded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_169_DXControl_IsLoaded;
+                xamlMember.Getter = get_168_DXControl_IsLoaded;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.Core.Native.DXControl.IsMouseOver":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.Core.Native.DXControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsMouseOver", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_170_DXControl_IsMouseOver;
+                xamlMember.Getter = get_169_DXControl_IsMouseOver;
                 xamlMember.SetIsReadOnly();
                 break;
             case "DevExpress.Core.Native.DXControl.IsTabStop":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.Core.Native.DXControl");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "IsTabStop", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_171_DXControl_IsTabStop;
-                xamlMember.Setter = set_171_DXControl_IsTabStop;
+                xamlMember.Getter = get_170_DXControl_IsTabStop;
+                xamlMember.Setter = set_170_DXControl_IsTabStop;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.CurrentGrid":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
@@ -3881,8 +3854,8 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_172_DataControlBase_CurrentGrid;
-                xamlMember.Setter = set_172_DataControlBase_CurrentGrid;
+                xamlMember.Getter = get_171_DataControlBase_CurrentGrid;
+                xamlMember.Setter = set_171_DataControlBase_CurrentGrid;
                 break;
             case "DevExpress.UI.Xaml.Grid.DataControlBase.CurrentViewChangedListener":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("DevExpress.UI.Xaml.Grid.DataControlBase");
@@ -3890,43 +3863,31 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_173_DataControlBase_CurrentViewChangedListener;
-                xamlMember.Setter = set_173_DataControlBase_CurrentViewChangedListener;
+                xamlMember.Getter = get_172_DataControlBase_CurrentViewChangedListener;
+                xamlMember.Setter = set_172_DataControlBase_CurrentViewChangedListener;
                 break;
             case "WS.CFS.FeedbackListPage.DefaultViewModel":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.FeedbackListPage");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "WS.CFS.Common.ObservableDictionary");
-                xamlMember.Getter = get_174_FeedbackListPage_DefaultViewModel;
+                xamlMember.Getter = get_173_FeedbackListPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WS.CFS.FeedbackListPage.NavigationHelper":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.FeedbackListPage");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "NavigationHelper", "WS.CFS.Common.NavigationHelper");
-                xamlMember.Getter = get_175_FeedbackListPage_NavigationHelper;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "WS.CFS.MainPage.DefaultViewModel":
-                userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.MainPage");
-                xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "WS.CFS.Common.ObservableDictionary");
-                xamlMember.Getter = get_176_MainPage_DefaultViewModel;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "WS.CFS.MainPage.NavigationHelper":
-                userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.MainPage");
-                xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "NavigationHelper", "WS.CFS.Common.NavigationHelper");
-                xamlMember.Getter = get_177_MainPage_NavigationHelper;
+                xamlMember.Getter = get_174_FeedbackListPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WS.CFS.SearchResultsPage.DefaultViewModel":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.SearchResultsPage");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "WS.CFS.Common.ObservableDictionary");
-                xamlMember.Getter = get_178_SearchResultsPage_DefaultViewModel;
+                xamlMember.Getter = get_175_SearchResultsPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WS.CFS.SearchResultsPage.NavigationHelper":
                 userType = (global::WS.CFS.WS_CFS_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WS.CFS.SearchResultsPage");
                 xamlMember = new global::WS.CFS.WS_CFS_XamlTypeInfo.XamlMember(this, "NavigationHelper", "WS.CFS.Common.NavigationHelper");
-                xamlMember.Getter = get_179_SearchResultsPage_NavigationHelper;
+                xamlMember.Getter = get_176_SearchResultsPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             }
@@ -3968,6 +3929,7 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
         virtual public bool IsMarkupExtension { get { throw new global::System.NotImplementedException(); } }
         virtual public bool IsBindable { get { throw new global::System.NotImplementedException(); } }
         virtual public bool IsReturnTypeStub { get { throw new global::System.NotImplementedException(); } }
+        virtual public bool IsLocalType { get { throw new global::System.NotImplementedException(); } }
         virtual public global::Windows.UI.Xaml.Markup.IXamlType ItemType { get { throw new global::System.NotImplementedException(); } }
         virtual public global::Windows.UI.Xaml.Markup.IXamlType KeyType { get { throw new global::System.NotImplementedException(); } }
         virtual public object ActivateInstance() { throw new global::System.NotImplementedException(); }
@@ -3992,6 +3954,7 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
         bool _isMarkupExtension;
         bool _isBindable;
         bool _isReturnTypeStub;
+        bool _isLocalType;
 
         string _contentPropertyName;
         string _itemTypeName;
@@ -4016,6 +3979,7 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
         override public bool IsMarkupExtension { get { return _isMarkupExtension; } }
         override public bool IsBindable { get { return _isBindable; } }
         override public bool IsReturnTypeStub { get { return _isReturnTypeStub; } }
+        override public bool IsLocalType { get { return _isLocalType; } }
 
         override public global::Windows.UI.Xaml.Markup.IXamlMember ContentProperty
         {
@@ -4147,6 +4111,11 @@ namespace WS.CFS.WS_CFS_XamlTypeInfo
         public void SetIsReturnTypeStub()
         {
             _isReturnTypeStub = true;
+        }
+
+        public void SetIsLocalType()
+        {
+            _isLocalType = true;
         }
 
         public void SetItemTypeName(string itemTypeName)

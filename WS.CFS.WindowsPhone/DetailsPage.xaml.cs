@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using WS.CFS.Data;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -21,7 +22,7 @@ namespace WS.CFS
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class DetailsPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -45,7 +46,7 @@ namespace WS.CFS
         }
 
 
-        public MainPage()
+        public DetailsPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -66,6 +67,14 @@ namespace WS.CFS
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            
+            var feedbackId = (string)e.NavigationParameter;
+            var feedback = FeedbackDataSource.GetFeedback(feedbackId);
+
+            if (feedback != null)
+            {
+                this.defaultViewModel["Item"] = feedback;
+            }
         }
 
         /// <summary>
@@ -102,10 +111,5 @@ namespace WS.CFS
         }
 
         #endregion
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(FeedbackListPage));
-        }
     }
 }

@@ -12,11 +12,14 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using WS.CFS.Data;
+using WS.CFS.DataModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace WS.CFS
 {
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -25,10 +28,18 @@ namespace WS.CFS
         public LoginPage()
         {
             this.InitializeComponent();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            FeedbackDataSource.UserInfo = new User
+            {
+                Email = "juan-paulo.roque@hp.com",
+                FirstName = "Paulo",
+                LastName = "Roque"
+            };
+
             this.Frame.Navigate(typeof(FeedbackListPage));
         }
     }
