@@ -1,0 +1,17 @@
+Common\ReadMe.txt
+DataModel\feedbacks.json
+Assets\Logo.scale-240.png
+Assets\SmallLogo.scale-240.png
+Assets\SplashScreen.scale-240.png
+Assets\Square71x71Logo.scale-240.png
+Assets\StoreLogo.scale-240.png
+Assets\WideLogo.scale-240.png
+AddFeedbackPage.xbf
+App.xbf
+BasicPage1.xbf
+DetailsPage.xbf
+FeedbackListPage.xbf
+LoginPage.xbf
+PreferencesSettingsFlyout.xbf
+SearchResultsPage.xbf
+WS.CFS.WindowsPhone.xr.xml

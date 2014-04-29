@@ -1,0 +1,57 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WS.CFS"
+    xmlns:common="using:WS.CFS.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Grid="using:DevExpress.UI.Xaml.Grid"
+    x:Name="pageRoot"
+    x:Class="WS.CFS.FeedbackListPage"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <CollectionViewSource
+        x:Name="itemsViewSource"
+        Source="{Binding Items}"/>
+
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--<Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+                        Style="{StaticResource NavigationBackButtonNormalStyle}"
+                        VerticalAlignment="Top"
+                        AutomationProperties.Name="Back"
+                        AutomationProperties.AutomationId="BackButton"
+                        AutomationProperties.ItemType="Navigation Button"/>-->
+            <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight">
+                <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
+				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="40 0 0 0" Text="Citizen Feedbacks"/>
+                <AppBarButton x:ConnectionId='2' Icon="Add" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="76"                            />
+            </StackPanel>
+        </Grid>
+
+        <Grid:GridControl x:ConnectionId='1' x:Name="grdFeedback" ItemsSource="{Binding Source={StaticResource itemsViewSource}}" 
+                          AutoGenerateColumns="True" 
+                          Grid.Row="1" 
+                          VerticalAlignment="Top" 
+                          Margin="40 20 40 20"                                         />
+    </Grid>
+</Page>
+

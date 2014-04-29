@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>PAULO-SURFACE</Machine>
+    <WindowsUser>Paulo</WindowsUser>
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>4f4cce9d-58e3-4a9e-92f4-23ab7ed20a41</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\obj\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\WS.CFS.WindowsPhone.exe">
+      <PackagePath>WS.CFS.WindowsPhone.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\packages\Newtonsoft.Json.6.0.2\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\Assets\Logo.scale-240.png">
+      <PackagePath>Assets\Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\Assets\SmallLogo.scale-240.png">
+      <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\Assets\SplashScreen.scale-240.png">
+      <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\Assets\Square71x71Logo.scale-240.png">
+      <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\Assets\StoreLogo.scale-240.png">
+      <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\Assets\WideLogo.scale-240.png">
+      <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.Shared\Common\ReadMe.txt">
+      <PackagePath>Common\ReadMe.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.Shared\DataModel\feedbacks.json">
+      <PackagePath>DataModel\feedbacks.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\AddFeedbackPage.xbf">
+      <PackagePath>AddFeedbackPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\BasicPage1.xbf">
+      <PackagePath>BasicPage1.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\DetailsPage.xbf">
+      <PackagePath>DetailsPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\FeedbackListPage.xbf">
+      <PackagePath>FeedbackListPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\LoginPage.xbf">
+      <PackagePath>LoginPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\PreferencesSettingsFlyout.xbf">
+      <PackagePath>PreferencesSettingsFlyout.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\SearchResultsPage.xbf">
+      <PackagePath>SearchResultsPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\WS.CFS.WindowsPhone.xr.xml">
+      <PackagePath>WS.CFS.WindowsPhone.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

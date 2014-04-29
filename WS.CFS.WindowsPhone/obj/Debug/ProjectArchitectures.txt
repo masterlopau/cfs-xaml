@@ -1,0 +1,1 @@
+C:\Users\Paulo\Source\Repos\cfs-xaml\WS.CFS.WindowsPhone\WS.CFS.WindowsPhone.csproj;neutral
